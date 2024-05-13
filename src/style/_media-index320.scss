@@ -229,16 +229,9 @@
                     font-size: 20px;
                     margin-bottom: 20px;
                 }
-                // .homeForFamily__tabs {
-                //     flex-wrap: wrap;
-                //     gap: 5px;
-                //     .homeForFamily__tab {
-                //         font-size: 14px;
-                //         padding: 12px 20px;
-                //     }
-                // }
             }
             .homeForFamily__plan {
+                margin: 0 auto;
                 position: static;
                 padding: 12px;
                 margin-bottom: 20px;
@@ -357,7 +350,6 @@
                 padding: 15px;
                 left: 15px;
                 right: 15px;
-                // transform: translateY(-50%);
                 .feedback__text {
                     font-size: 14px;
                 }
@@ -366,6 +358,12 @@
                         font-size: 12px;
                         padding: 8px;
                         margin-bottom: 10px;
+                    }
+                    .input-error {
+                        .error-text {
+                            bottom: 2px;
+                            font-size: 8px;
+                        }
                     }
                     .feedback__button {
                         font-size: 14px;

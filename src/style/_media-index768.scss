@@ -370,6 +370,12 @@
                         padding: 12px;
                         margin-bottom: 16px;
                     }
+                    .input-error {
+                        .error-text {
+                            bottom: 2px;
+                            font-size: 12px;
+                        }
+                    }
                     .feedback__button {
                         font-size: 14px;
                         padding: 12px 0;
