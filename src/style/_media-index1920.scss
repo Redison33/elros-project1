@@ -1,0 +1,311 @@
+@import '_vars.scss';
+@import '_mixin.scss';
+
+@media (max-width: 2400px) {
+    .container {
+        margin-right: 50px;
+        margin-left: 50px;
+        max-width: 2400px;
+    }
+    .max-container {
+        margin-bottom: 100px;
+    }
+    .header {
+        &__container {
+            .header__top {
+                margin-bottom: 400px;
+                .header__logo {
+                    width: auto;
+                    margin-right: 0;
+                    svg {
+                        width: 300px;
+                    }
+                }
+                .header__nav {
+                    margin-right: 0;
+                }
+                .nav__list {
+                    font-size: 18px;
+                    gap: 45px;
+                }
+                .header__number {
+                    font-size: 18px;
+                    svg {
+                        width: 25px;
+                    }
+                }
+                .header__button {
+                    padding: 20px 35px;
+                    font-size: 18px;
+                }
+            }
+            .header__bottom {
+                justify-content: center;
+                .header__wrap-1 {
+                    gap: 50px;
+                    .header__title {
+                        font-size: 170px;
+                    }
+                    .header__text {
+                        font-size: 18px;
+                    }
+                }
+
+                .header__wrap-2 {
+                    gap: 80px;
+                    .header__title {
+                        font-size: 170px;
+                        height: auto;
+                    }
+                    .header__text {
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
+    .about {
+        &__container {
+            padding-top: 0;
+            .about__title {
+                width: 705px;
+                font-size: 60px;
+            }
+            .swiper {
+                &-slide {
+                    min-height: auto;
+                    .slide__text {
+                        width: 40%;
+                        padding: 50px 30px 0 30px;
+                        font-size: 24px;
+                    }
+                    .slide__img {
+                        width: 60%;
+                    }
+                }
+            }
+            .about__map {
+                .map {
+                    max-width: 800px;
+                }
+                .about__content {
+                    .about__text {
+                        font-size: 22px;
+                    }
+                    .about__button {
+                        padding: 18px 30px;
+                    }
+                }
+            }
+        }
+    }
+    .catalog {
+        &__container {
+            .catalog__wrap {
+                .catalog__title {
+                    font-size: 60px;
+                }
+                .catalog__text {
+                    font-size: 18px;
+                }
+            }
+            .catalog__tabs {
+                gap: 0;
+                justify-content: space-between;
+                .catalog__tab {
+                    padding: 20px 35px;
+                }
+            }
+            .swiper {
+                &-wrapper {
+                    .slide {
+                        min-height: 400px;
+                    }
+                }
+                .swiper-button-prev {
+                    left: 45%;
+                }
+                .swiper-button-next {
+                    right: 45%;
+                }
+            }
+            .catalog__tour {
+                max-width: 994px;
+                .tour__text {
+                    font-size: 18px;
+                }
+                .tour__wrap {
+                    padding: 40px 100px;
+                    .tour__button {
+                        padding: 16px 60px;
+                    }
+                }
+            }
+        }
+    }
+    .characteristics {
+        &__container {
+            .characteristics__title {
+                width: 715px;
+                font-size: 60px;
+            }
+            .characteristics__cards {
+                .card {
+                    &__title {
+                        font-size: 35px;
+                    }
+
+                    &__list {
+                        .list__item {
+                            font-size: 24px;
+                        }
+                    }
+                }
+            }
+            .characteristics__button {
+                font-size: 18px;
+                padding: 18px 60px;
+            }
+        }
+    }
+    .homeForFamily {
+        &__container {
+            margin-left: 0;
+            margin-right: 0;
+            .homeForFamily__wrap {
+                padding-left: 50px;
+                .homeForFamily__title {
+                    font-size: 60px;
+                }
+                .homeForFamily__tabs {
+                    gap: 24px;
+                    .homeForFamily__tab {
+                        font-size: 18px;
+                        padding: 18px 30px;
+                    }
+                }
+            }
+            .homeForFamily__plan {
+                max-width: 350px;
+                top: 150px;
+                right: 320px;
+                text-align: center;
+                img {
+                    margin-bottom: 12px;
+                }
+                .homeForFamily__text {
+                    font-size: 18px;
+                    padding: 0 12px;
+                    margin-bottom: 12px;
+                }
+                .homeForFamily__button {
+                    font-size: 16px;
+                    margin: 0;
+                    margin-bottom: 12px;
+                    padding: 18px 40px;
+                }
+            }
+            .homeForFamily__map {
+                min-height: 1060px;
+                .homeForFamily__info {
+                    max-width: 700px;
+                    padding: 20px 40px 20px 40px;
+                    .homeForFamily__size {
+                        &-line {
+                            &:first-child {
+                                font-size: 60px;
+                            }
+                            &:last-child {
+                                font-size: 30px;
+                            }
+                        }
+                    }
+                    .homeForFamily_text {
+                        font-size: 24px;
+                    }
+                }
+            }
+        }
+    }
+    .pluses {
+        &__container {
+            .pluses__title {
+                font-size: 60px;
+            }
+            .pluses__cards {
+                .card {
+                    &__title {
+                        font-size: 35px;
+                    }
+                    &__list {
+                        .list__item {
+                            font-size: 24px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .building {
+        &__container {
+            .building__wrap {
+                .building__title {
+                    font-size: 60px;
+                }
+                .building__button {
+                    padding: 17px 40px;
+                }
+                .building__text {
+                    font-size: 18px;
+                }
+            }
+            .card {
+                &__content {
+                    padding: 0;
+                    padding: 100px 70px 0px 70px;
+                    .card__text {
+                        font-size: 18px;
+                    }
+                    .card__button {
+                        padding: 12px 30px;
+                    }
+                }
+                img {
+                    max-width: 900px;
+                }
+            }
+        }
+    }
+    .feedback {
+        margin-bottom: 130px;
+        &__container {
+            margin-left: 0;
+            margin-right: 0;
+            .feedback__wrap {
+                padding: 42px;
+                .feedback__text {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+    .footer {
+        padding-bottom: 100px;
+        &__container {
+            margin-bottom: 0;
+            .footer__logo {
+                svg {
+                    width: 300px;
+                }
+            }
+            .nav {
+                margin-right: 0;
+            }
+            .footer__network {
+                .footer__text {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}

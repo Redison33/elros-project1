@@ -1,0 +1,354 @@
+@import '_vars.scss';
+@import '_mixin.scss';
+
+@media (max-width: 1600px) {
+    .container {
+        margin-right: 30px;
+        margin-left: 30px;
+    }
+    .max-container {
+        margin-bottom: 70px;
+    }
+    .header {
+        &__container {
+            position: relative;
+            margin-right: 0;
+            margin-left: 0;
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-top: 40px;
+            .header__top {
+                .header__logo {
+                    svg {
+                        width: 250px;
+                    }
+                }
+                .header__nav {
+                    visibility: hidden;
+                    transform: translateY(-150%);
+                    position: absolute;
+                    background-color: $primary-dark;
+                    right: 0;
+                    top: 40px;
+                    padding: 100px 200px 100px 100px;
+                    border-radius: 42px 0 0 42px;
+                    transition: visibility 0.3s ease-in-out, transform 0.3s ease-in-out;
+                    &--active {
+                        visibility: visible;
+                        transform: none;
+                    }
+                }
+                .nav__list {
+                    flex-direction: column;
+                    padding: 0;
+                }
+                .header__number {
+                    font-size: 16px;
+                }
+                .header__button {
+                    padding: 15px 25px;
+                    font-size: 16px;
+                }
+                .burger {
+                    display: block;
+                    width: 26px;
+                }
+            }
+            .header__bottom {
+                .header__wrap-1 {
+                    .header__title {
+                        font-size: 130px;
+                    }
+                    .header__text {
+                        font-size: 14px;
+                    }
+                }
+
+                .header__wrap-2 {
+                    gap: 60px;
+                    .header__title {
+                        font-size: 130px;
+                    }
+                    .header__text {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+    .about {
+        &__container {
+            .about__title {
+                width: 590px;
+                font-size: 50px;
+            }
+            .swiper {
+                margin: 0;
+                &-slide {
+                    .slide__text {
+                        width: 40%;
+                        padding: 30px 15px 0 15px;
+                        font-size: 18px;
+                    }
+                }
+            }
+            .about__map {
+                margin: 0;
+                gap: 0;
+                justify-content: space-between;
+                .map {
+                    max-width: 50%;
+                    max-height: 400px;
+                }
+                .about__content {
+                    max-width: 45%;
+                    .about__text {
+                        font-size: 16px;
+                    }
+                    .about__button {
+                        width: auto;
+                        font-size: 16px;
+                        padding: 18px 30px;
+                    }
+                }
+            }
+        }
+    }
+    .catalog {
+        &__container {
+            .catalog__wrap {
+                .catalog__title {
+                    font-size: 50px;
+                }
+                .catalog__text {
+                    font-size: 16px;
+                }
+            }
+            .catalog__tabs {
+                max-width: 500px;
+                .catalog__tab {
+                    padding: 15px 25px;
+                    font-size: 16px;
+                }
+            }
+            .swiper {
+                &-wrapper {
+                    .slide {
+                        min-height: 400px;
+                    }
+                }
+                .swiper-button-prev {
+                    left: 43%;
+                }
+                .swiper-button-next {
+                    right: 43%;
+                }
+            }
+            .catalog__tour {
+                max-width: 994px;
+                .tour__text {
+                    font-size: 16px;
+                }
+                .tour__wrap {
+                    padding: 20px 120px;
+                    .tour__button {
+                        padding: 16px 60px;
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+    .characteristics {
+        &__container {
+            .characteristics__title {
+                width: 600px;
+                font-size: 50px;
+            }
+            .characteristics__cards {
+                gap: 30px;
+                .card {
+                    max-width: 400px;
+                    &__title {
+                        font-size: 28px;
+                    }
+
+                    &__list {
+                        .list__item {
+                            font-size: 18px;
+                        }
+                    }
+                }
+            }
+            .characteristics__button {
+                font-size: 16px;
+                padding: 16px 40px;
+            }
+        }
+    }
+    .homeForFamily {
+        &__container {
+            margin-left: 0;
+            margin-right: 0;
+            .homeForFamily__wrap {
+                padding-left: 30px;
+                .homeForFamily__title {
+                    font-size: 50px;
+                }
+                .homeForFamily__tabs {
+                    gap: 24px;
+                    .homeForFamily__tab {
+                        font-size: 16px;
+                        padding: 16px 24px;
+                    }
+                }
+            }
+            .homeForFamily__plan {
+                max-width: 350px;
+                top: 250px;
+                right: 30px;
+                text-align: center;
+                img {
+                    margin-bottom: 12px;
+                }
+                .homeForFamily__text {
+                    font-size: 16px;
+                    padding: 0 12px;
+                    margin-bottom: 12px;
+                }
+                .homeForFamily__button {
+                    font-size: 16px;
+                    margin: 0;
+                    margin-bottom: 12px;
+                    padding: 18px 40px;
+                }
+            }
+            .homeForFamily__map {
+                background-size: cover;
+                min-height: 576px;
+                .homeForFamily__info {
+                    max-width: 400px;
+                    padding: 20px;
+                    .homeForFamily__size {
+                        &-line {
+                            &:first-child {
+                                font-size: 40px;
+                            }
+                            &:last-child {
+                                font-size: 20px;
+                            }
+                        }
+                    }
+                    .homeForFamily_text {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+    .pluses {
+        &__container {
+            .pluses__title {
+                font-size: 50px;
+            }
+            .pluses__cards {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 30px;
+                .card {
+                    max-width: 400px;
+                    &__title {
+                        font-size: 28px;
+                    }
+                    &__list {
+                        .list__item {
+                            font-size: 18px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .building {
+        &__container {
+            .building__wrap {
+                .building__title {
+                    font-size: 50px;
+                }
+                .building__button {
+                    font-size: 16px;
+                    padding: 16px 30px;
+                }
+                .building__text {
+                    font-size: 16px;
+                }
+            }
+            .card {
+                max-width: 768px;
+                flex-direction: column-reverse;
+                &__content {
+                    padding: 30px 20px 0px 30px;
+                    .card__text {
+                        font-size: 18px;
+                    }
+                    .card__button {
+                        padding: 12px 30px;
+                        margin-bottom: 30px;
+                    }
+                }
+            }
+        }
+    }
+    .feedback {
+        margin-bottom: 100px;
+        &__container {
+            margin-left: 0;
+            margin-right: 0;
+            .feedback__wrap {
+                padding: 42px;
+                .feedback__text {
+                    font-size: 16px;
+                }
+                .feedback__form {
+                    .feedback__input {
+                        font-size: 16px;
+                        padding: 16px;
+                        margin-bottom: 20px;
+                    }
+                    .feedback__button {
+                        font-size: 16px;
+                        margin-top: 0;
+                        margin-bottom: 20px;
+                    }
+                    .checkbox {
+                    }
+                    .checkbox + label::before {
+                        width: 12px;
+                        height: 12px;
+                        margin-right: 5px;
+                    }
+                }
+            }
+        }
+    }
+    .footer {
+        padding-bottom: 50px;
+        &__container {
+            margin-bottom: 0;
+            .footer__logo {
+                svg {
+                    width: 250px;
+                }
+            }
+            .nav {
+                display: none;
+            }
+            .footer__network {
+                .footer__text {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
