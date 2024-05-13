@@ -1169,6 +1169,9 @@ body {
   .max-container {
     margin-bottom: 100px;
   }
+  .header__container {
+    padding-top: 40px;
+  }
   .header__container .header__top {
     margin-bottom: 400px;
   }
@@ -1420,7 +1423,7 @@ body {
     margin-left: 0;
     padding-left: 30px;
     padding-right: 30px;
-    padding-top: 40px;
+    padding-top: 30px;
   }
   .header__container .header__top .header__logo svg {
     width: 250px;
