@@ -23,6 +23,7 @@ window.addEventListener('DOMContentLoaded', () => {
         spaceBetween: 160,
         centeredSlides: true,
         loop: true,
+        initialSlide: 1,
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
@@ -39,6 +40,7 @@ window.addEventListener('DOMContentLoaded', () => {
             },
         },
     });
+    console.log(catalogSwiper);
 
     const buildingSwiper = new Swiper('.building__swiper', {
         direction: 'horizontal',
@@ -133,4 +135,29 @@ window.addEventListener('DOMContentLoaded', () => {
             errorText2.classList.remove('error-text--active');
         }
     });
+
+    let tabs = document.querySelector('.catalog__tabs');
+    let tab = document.querySelectorAll('.catalog__tab');
+    let tabContent = document.querySelectorAll('.catalog__swiper');
+    console.log(tabContent);
+
+    tabs.addEventListener('click', (event) => {
+        for (let i = 0; i < tab.length; i++) {
+            tab[i].classList.remove('catalog__tab--active');
+            tabContent[i].classList.remove('swiper--active');
+            if (event.target == tab[i]) {
+                tabContent[i].classList.add('swiper--active');
+            }
+        }
+        event.target.classList.add('catalog__tab--active');
+    });
+});
+
+let btnScroll1 = document.querySelector('.about__button');
+let btnScroll2 = document.querySelector('.characteristics__button');
+btnScroll1.addEventListener('click', () => {
+    document.querySelector('.feedback').scrollIntoView({ behavior: 'smooth' });
+});
+btnScroll2.addEventListener('click', () => {
+    document.querySelector('.feedback').scrollIntoView({ behavior: 'smooth' });
 });

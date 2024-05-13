@@ -236,9 +236,10 @@
                     font-size: 30px;
                 }
                 .homeForFamily__tabs {
-                    gap: 24px;
+                    flex-wrap: wrap;
+                    gap: 5px;
                     .homeForFamily__tab {
-                        font-size: 16px;
+                        font-size: 14px;
                         padding: 12px 20px;
                     }
                 }
@@ -393,6 +394,36 @@
                 .footer__text {
                     font-size: 16px;
                 }
+            }
+        }
+    }
+}
+
+@media (max-width: 691px) {
+    .pluses {
+        &__container {
+            .pluses__cards {
+                .card {
+                    max-width: 500px;
+                }
+            }
+        }
+    }
+    .characteristics {
+        &__container {
+            .characteristics__cards {
+                .card {
+                    max-width: 500px;
+                }
+            }
+        }
+    }
+    .feedback {
+        &__container {
+            .feedback__wrap {
+                left: 30px;
+                right: 30px;
+                transform: translateY(-50%);
             }
         }
     }

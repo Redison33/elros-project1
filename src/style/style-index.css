@@ -444,21 +444,25 @@ body {
 .catalog__container .catalog__tabs .catalog__tab:active {
   background-color: #3b4a46;
 }
-.catalog__container .catalog__tabs .catalog__tab-active {
+.catalog__container .catalog__tabs .catalog__tab--active {
   color: #000000;
   background-color: #ede4db;
   transition: background-color 0.3s ease-in-out;
   cursor: pointer;
 }
-.catalog__container .catalog__tabs .catalog__tab-active:hover {
+.catalog__container .catalog__tabs .catalog__tab--active:hover {
   background-color: #cecece;
 }
-.catalog__container .catalog__tabs .catalog__tab-active:active {
+.catalog__container .catalog__tabs .catalog__tab--active:active {
   background-color: #929292;
 }
 .catalog__container .swiper {
   padding-bottom: 212px;
   margin-bottom: 64px;
+  display: none;
+}
+.catalog__container .swiper--active {
+  display: flex;
 }
 .catalog__container .swiper-wrapper {
   align-items: start;
@@ -816,6 +820,7 @@ body {
   text-align: end;
   font-size: 32px;
   font-weight: 800;
+  color: #ffffff;
 }
 
 .pluses {
@@ -952,6 +957,9 @@ body {
 }
 .building__container .card__content .card__button:active {
   background-color: #929292;
+}
+.building__container .card__content .card__button:last-child {
+  background-color: #ffffff;
 }
 .building__container .card img {
   border-radius: 42px;
@@ -1889,10 +1897,11 @@ body {
     font-size: 30px;
   }
   .homeForFamily__container .homeForFamily__wrap .homeForFamily__tabs {
-    gap: 24px;
+    flex-wrap: wrap;
+    gap: 5px;
   }
   .homeForFamily__container .homeForFamily__wrap .homeForFamily__tabs .homeForFamily__tab {
-    font-size: 16px;
+    font-size: 14px;
     padding: 12px 20px;
   }
   .homeForFamily__container .homeForFamily__plan {
@@ -2017,6 +2026,19 @@ body {
   }
   .footer__container .footer__network .footer__text {
     font-size: 16px;
+  }
+}
+@media (max-width: 691px) {
+  .pluses__container .pluses__cards .card {
+    max-width: 500px;
+  }
+  .characteristics__container .characteristics__cards .card {
+    max-width: 500px;
+  }
+  .feedback__container .feedback__wrap {
+    left: 30px;
+    right: 30px;
+    transform: translateY(-50%);
   }
 }
 @media (max-width: 600px) {
@@ -2204,14 +2226,6 @@ body {
     font-size: 20px;
     margin-bottom: 20px;
   }
-  .homeForFamily__container .homeForFamily__wrap .homeForFamily__tabs {
-    flex-wrap: wrap;
-    gap: 5px;
-  }
-  .homeForFamily__container .homeForFamily__wrap .homeForFamily__tabs .homeForFamily__tab {
-    font-size: 14px;
-    padding: 12px 20px;
-  }
   .homeForFamily__container .homeForFamily__plan {
     position: static;
     padding: 12px;
@@ -2250,9 +2264,6 @@ body {
   .pluses__container .pluses__title {
     font-size: 20px;
     margin-bottom: 30px;
-  }
-  .pluses__container .pluses__cards .card {
-    max-width: 300px;
   }
   .pluses__container .pluses__cards .card__title {
     font-size: 16px;
@@ -2313,7 +2324,6 @@ body {
     padding: 15px;
     left: 15px;
     right: 15px;
-    transform: translateY(-50%);
   }
   .feedback__container .feedback__wrap .feedback__text {
     font-size: 14px;

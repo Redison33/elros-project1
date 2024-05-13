@@ -431,7 +431,7 @@ body {
                 &:active {
                     background-color: $active-primary-dark;
                 }
-                &-active {
+                &--active {
                     color: $black;
                     background-color: $beige;
                     transition: background-color 0.3s ease-in-out;
@@ -448,6 +448,12 @@ body {
         .swiper {
             padding-bottom: 212px;
             margin-bottom: 64px;
+            // &--hidden {
+            display: none;
+            // }
+            &--active {
+                display: flex;
+            }
             &-wrapper {
                 align-items: start;
                 .slide {
@@ -811,6 +817,7 @@ body {
                     text-align: end;
                     font-size: 32px;
                     font-weight: 800;
+                    color: $white;
                 }
             }
         }
@@ -943,6 +950,9 @@ body {
                     }
                     &:active {
                         background-color: $active-white;
+                    }
+                    &:last-child {
+                        background-color: $white;
                     }
                 }
             }
