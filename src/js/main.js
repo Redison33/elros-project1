@@ -1,4 +1,7 @@
 window.addEventListener('DOMContentLoaded', () => {
+    IMask(document.getElementById('inputPhone'), {
+        mask: '+{7}(000)000-00-00',
+    });
     const aboutSwiper = new Swiper('.about__swiper', {
         direction: 'horizontal',
         slidesPerView: 1,
@@ -40,7 +43,6 @@ window.addEventListener('DOMContentLoaded', () => {
             },
         },
     });
-    console.log(catalogSwiper);
 
     const buildingSwiper = new Swiper('.building__swiper', {
         direction: 'horizontal',
@@ -64,34 +66,33 @@ window.addEventListener('DOMContentLoaded', () => {
             },
         },
     });
+    ymaps.ready(init);
+    function init() {
+        // Создание карты.
+        var myMap = new ymaps.Map(
+            'map',
+            {
+                center: [56.229065, 40.806625],
+                zoom: 9,
+                controls: [],
+            },
+            { suppressMapOpenBlock: true },
+        );
 
-    ymaps.ready(function () {
-        var myMap = new ymaps.Map('map', {
-            center: [55.753994, 37.622093],
-            zoom: 9,
-            // Добавим кнопку для построения маршрутов на карту.
-            controls: ['routeButtonControl'],
+        let myPlacemark = new ymaps.Placemark([56.190702, 40.911506], {
+            balloonContent: 'Адрес: Владимирская область, Камешковский район, деревня Пенкино',
         });
 
-        var control = myMap.controls.get('routeButtonControl');
-
-        // Зададим координаты пункта отправления с помощью геолокации.
-        control.routePanel.geolocate('from');
-
-        // Откроем панель для построения маршрутов.
-        control.state.set('expanded', true);
-
-        // Подпишемся на событие успешного запроса маршрута.
-        control.routePanel.getRouteAsync().then(function (route) {
-            route.model.events.add('requestsuccess', function () {
-                // Установим координаты точки "Куда" (например, Золотые Ворота во Владимире).
-                control.routePanel.state.set({
-                    toEnabled: true,
-                    to: 'Владимир, Дворянская улица, 1А',
-                });
+        myPlacemark.events.add('click', function (e) {
+            var placemark = e.get('target');
+            myMap.balloon.open(placemark.geometry.getCoordinates(), {
+                contentHeader: 'Информация',
+                contentBody: placemark.properties.get('balloonContent'),
             });
         });
-    });
+
+        myMap.geoObjects.add(myPlacemark);
+    }
 
     let burger = document.querySelector('.burger');
     let burgerMenu = document.querySelector('.header__nav');
@@ -108,7 +109,7 @@ window.addEventListener('DOMContentLoaded', () => {
     let errorText2 = document.querySelector('.error-text-2');
 
     form.addEventListener('submit', (event) => {
-        if (inputName.value === '' && inputPhone.value === '') {
+        if (inputName.value === '' && (inputPhone.value === '' || inputPhone.value.length !== 16)) {
             event.preventDefault();
             errorText1.classList.add('error-text--active');
             errorText2.classList.add('error-text--active');
@@ -118,7 +119,7 @@ window.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 errorText2.classList.remove('error-text--active');
             }, 5000);
-        } else if (inputPhone.value === '') {
+        } else if (inputPhone.value === '' || inputPhone.value.length !== 16) {
             event.preventDefault();
             errorText2.classList.add('error-text--active');
             setTimeout(() => {
@@ -139,7 +140,6 @@ window.addEventListener('DOMContentLoaded', () => {
     let tabs = document.querySelector('.catalog__tabs');
     let tab = document.querySelectorAll('.catalog__tab');
     let tabContent = document.querySelectorAll('.catalog__swiper');
-    console.log(tabContent);
 
     tabs.addEventListener('click', (event) => {
         for (let i = 0; i < tab.length; i++) {
@@ -151,13 +151,84 @@ window.addEventListener('DOMContentLoaded', () => {
         }
         event.target.classList.add('catalog__tab--active');
     });
-});
+    let btnScroll1 = document.querySelector('.about__button');
+    let btnScroll2 = document.querySelector('.characteristics__button');
+    btnScroll1.addEventListener('click', () => {
+        document.querySelector('.feedback').scrollIntoView({ behavior: 'smooth' });
+    });
+    btnScroll2.addEventListener('click', () => {
+        document.querySelector('.feedback').scrollIntoView({ behavior: 'smooth' });
+    });
 
-let btnScroll1 = document.querySelector('.about__button');
-let btnScroll2 = document.querySelector('.characteristics__button');
-btnScroll1.addEventListener('click', () => {
-    document.querySelector('.feedback').scrollIntoView({ behavior: 'smooth' });
-});
-btnScroll2.addEventListener('click', () => {
-    document.querySelector('.feedback').scrollIntoView({ behavior: 'smooth' });
+    let btnNav1 = document.querySelector('.header__item-1');
+    let btnNav2 = document.querySelector('.header__item-2');
+    let btnNav3 = document.querySelector('.header__item-3');
+    let btnNav4 = document.querySelector('.header__item-4');
+    let btnNav5 = document.querySelector('.footer__item-1');
+    let btnNav6 = document.querySelector('.footer__item-2');
+    let btnNav7 = document.querySelector('.footer__item-3');
+    let btnNav8 = document.querySelector('.footer__item-4');
+    btnNav1.addEventListener('click', () => {
+        document.querySelector('.about').scrollIntoView({ behavior: 'smooth' });
+    });
+    btnNav2.addEventListener('click', () => {
+        document.querySelector('#map').scrollIntoView({ behavior: 'smooth' });
+    });
+    btnNav3.addEventListener('click', () => {
+        document.querySelector('.catalog').scrollIntoView({ behavior: 'smooth' });
+    });
+    btnNav4.addEventListener('click', () => {
+        document.querySelector('.homeForFamily').scrollIntoView({ behavior: 'smooth' });
+    });
+    btnNav5.addEventListener('click', () => {
+        document.querySelector('.about').scrollIntoView({ behavior: 'smooth' });
+    });
+    btnNav6.addEventListener('click', () => {
+        document.querySelector('#map').scrollIntoView({ behavior: 'smooth' });
+    });
+    btnNav7.addEventListener('click', () => {
+        document.querySelector('.catalog').scrollIntoView({ behavior: 'smooth' });
+    });
+    btnNav8.addEventListener('click', () => {
+        document.querySelector('.homeForFamily').scrollIntoView({ behavior: 'smooth' });
+    });
+    (function (m, e, t, r, i, k, a) {
+        m[i] =
+            m[i] ||
+            function () {
+                (m[i].a = m[i].a || []).push(arguments);
+            };
+        m[i].l = 1 * new Date();
+        for (var j = 0; j < document.scripts.length; j++) {
+            if (document.scripts[j].src === r) {
+                return;
+            }
+        }
+        (k = e.createElement(t)), (a = e.getElementsByTagName(t)[0]), (k.async = 1), (k.src = r), a.parentNode.insertBefore(k, a);
+    })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js', 'ym');
+
+    ym(97400384, 'init', {
+        clickmap: true,
+        trackLinks: true,
+        accurateTrackBounce: true,
+    });
+    var _tmr = window._tmr || (window._tmr = []);
+    _tmr.push({ id: '3519281', type: 'pageView', start: new Date().getTime() });
+    (function (d, w, id) {
+        if (d.getElementById(id)) return;
+        var ts = d.createElement('script');
+        ts.type = 'text/javascript';
+        ts.async = true;
+        ts.id = id;
+        ts.src = 'https://top-fwz1.mail.ru/js/code.js';
+        var f = function () {
+            var s = d.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ts, s);
+        };
+        if (w.opera == '[object Opera]') {
+            d.addEventListener('DOMContentLoaded', f, false);
+        } else {
+            f();
+        }
+    })(document, window, 'tmr-code');
 });

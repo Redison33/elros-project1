@@ -62,7 +62,7 @@ body {
 }
 
 .header {
-  background-image: url("../img/header_bg.jpg");
+  background-image: url("../img/header_bg.webp");
   background-size: cover;
 }
 .header__container {
@@ -142,6 +142,8 @@ body {
   stroke: #929292;
 }
 .header__container .header__top .header__button {
+  display: inline-block;
+  text-decoration: none !important;
   background-color: #ffffff;
   border-radius: 12px;
   color: #364f53;
@@ -604,7 +606,8 @@ body {
   margin-bottom: 40px;
 }
 .catalog__container .catalog__tour .tour__wrap .tour__button {
-  width: 230px;
+  text-decoration: none;
+  color: black;
   font-size: 18px;
   padding: 16px 72px;
   border-radius: 12px;
@@ -785,9 +788,10 @@ body {
   background-color: #3b4a46;
 }
 .homeForFamily__container .homeForFamily__map {
-  background-image: url("../img/homeForFamily.jpg");
+  background-image: url("../img/homeForFamily.webp");
   min-height: 1440px;
   position: relative;
+  background-size: cover;
 }
 .homeForFamily__container .homeForFamily__map .homeForFamily__info {
   position: absolute;
@@ -944,6 +948,9 @@ body {
   line-height: 130%;
 }
 .building__container .card__content .card__button {
+  display: inline-block;
+  text-decoration: none !important;
+  color: #000000;
   background-color: #ede4db;
   font-size: 18px;
   padding: 16px 48px;
@@ -1647,7 +1654,7 @@ body {
     flex-direction: column-reverse;
   }
   .building__container .card__content {
-    padding: 30px 20px 0px 30px;
+    padding: 30px 20px 0px 20px;
   }
   .building__container .card__content .card__text {
     font-size: 18px;
@@ -1655,6 +1662,9 @@ body {
   .building__container .card__content .card__button {
     padding: 12px 30px;
     margin-bottom: 30px;
+  }
+  .building__container .building__videos .swiper-wrapper .swiper-slide iframe {
+    height: 400px;
   }
   .feedback {
     margin-bottom: 100px;

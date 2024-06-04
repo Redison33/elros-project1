@@ -288,13 +288,24 @@
                 max-width: 768px;
                 flex-direction: column-reverse;
                 &__content {
-                    padding: 30px 20px 0px 30px;
+                    padding: 30px 20px 0px 20px;
                     .card__text {
                         font-size: 18px;
                     }
                     .card__button {
                         padding: 12px 30px;
                         margin-bottom: 30px;
+                    }
+                }
+            }
+            .building__videos {
+                .swiper {
+                    &-wrapper {
+                        .swiper-slide {
+                            iframe {
+                                height: 400px;
+                            }
+                        }
                     }
                 }
             }

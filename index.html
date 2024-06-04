@@ -7,11 +7,14 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
         <link rel="stylesheet" href="./src/style/normalize.css" />
         <link rel="stylesheet" href="./src/style/style-index.css" />
-        <script defer src="https://api-maps.yandex.ru/2.1/?apikey=68f07c8e-e3bc-438c-bd02-7f7500cda14f&lang=ru_RU" type="text/javascript"></script>
+        <script defer src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript"></script>
         <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script defer src="https://unpkg.com/imask"></script>
         <script defer src="./src/js/main.js"></script>
     </head>
     <body>
+        <div><img src="https://mc.yandex.ru/watch/97400384" style="position: absolute; left: -9999px" alt="" /></div>
+        <div><img src="https://top-fwz1.mail.ru/counter?id=3519281;js=na" style="position: absolute; left: -9999px" alt="Top.Mail.Ru" /></div>
         <header class="header max-container">
             <div class="header__container container">
                 <div class="header__top">
@@ -35,13 +38,13 @@
                     </div>
                     <div class="header__nav nav">
                         <ul class="nav__list list">
-                            <li class="list__item">О жилом районе</li>
-                            <li class="list__item">Расположение</li>
-                            <li class="list__item">Каталог домов</li>
-                            <li class="list__item">Выбрать дом</li>
+                            <li class="list__item header__item header__item-1">О жилом районе</li>
+                            <li class="list__item header__item header__item-2">Расположение</li>
+                            <li class="list__item header__item header__item-3">Каталог домов</li>
+                            <li class="list__item header__item header__item-4">Выбрать дом</li>
                         </ul>
                         <div class="header__number">
-                            <span>+7 (888) 888-88-88</span>
+                            <span>+7 (920) 908-98-83</span>
                             <svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M31.973 12.3887C30.7411 11.1443 29.2738 10.1577 27.6566 9.48642C26.0395 8.8151 24.3048 8.4725 22.5538 8.4786C15.2174 8.4786 9.23802 14.4579 9.23802 21.7944C9.23802 24.1458 9.85611 26.4301 11.0117 28.4456L9.13052 35.3521L16.1848 33.4978C18.1331 34.5593 20.3233 35.1237 22.5538 35.1237C29.8903 35.1237 35.8697 29.1443 35.8697 21.8078C35.8697 18.2471 34.4857 14.9014 31.973 12.3887ZM22.5538 32.8663C20.5652 32.8663 18.6169 32.3288 16.9104 31.3211L16.5073 31.0792L12.315 32.181L13.4303 28.0962L13.1615 27.6797C12.0567 25.9154 11.47 23.8761 11.4685 21.7944C11.4685 15.6941 16.4401 10.7225 22.5404 10.7225C25.4965 10.7225 28.2779 11.8781 30.3606 13.9742C31.3918 15.0007 32.2091 16.2217 32.7649 17.5664C33.3208 18.9111 33.6043 20.3528 33.5988 21.8078C33.6257 27.9081 28.6541 32.8663 22.5538 32.8663ZM28.6272 24.5893C28.2913 24.428 26.652 23.6218 26.3564 23.5009C26.0474 23.3934 25.8324 23.3396 25.604 23.6621C25.3756 23.998 24.744 24.7505 24.5559 24.9655C24.3678 25.1939 24.1662 25.2208 23.8303 25.0461C23.4944 24.8849 22.4195 24.5221 21.1564 23.3934C20.1621 22.5066 19.5037 21.4182 19.3021 21.0823C19.114 20.7463 19.2753 20.5717 19.4499 20.397C19.5977 20.2492 19.7859 20.0073 19.9471 19.8192C20.1083 19.6311 20.1755 19.4833 20.283 19.2683C20.3905 19.0399 20.3368 18.8518 20.2562 18.6905C20.1755 18.5293 19.5037 16.89 19.235 16.2182C18.9662 15.5732 18.6841 15.6538 18.4825 15.6404H17.8375C17.6091 15.6404 17.2598 15.721 16.9507 16.0569C16.6551 16.3928 15.7952 17.199 15.7952 18.8383C15.7952 20.4776 16.991 22.0631 17.1523 22.2781C17.3135 22.5066 19.5037 25.8657 22.836 27.3035C23.6288 27.6528 24.2469 27.8544 24.7306 28.0022C25.5234 28.2575 26.2489 28.2172 26.8267 28.1366C27.4717 28.0425 28.8019 27.3304 29.0707 26.551C29.3528 25.7717 29.3528 25.1133 29.2588 24.9655C29.1647 24.8177 28.9632 24.7505 28.6272 24.5893Z"
@@ -50,10 +53,10 @@
                                 <circle cx="22.5" cy="22.5" r="21.5" stroke="white" stroke-width="2" />
                             </svg>
                         </div>
-                        <button class="header__button button-reset">Презентация проекта</button>
+                        <a class="header__button button-reset" href="./src/file/Буклет Для своих_compressed.pdf">Презентация проекта</a>
                     </div>
                     <div class="header__number">
-                        <span>+7 (888) 888-88-88</span>
+                        <span>+7 (920) 908-98-83</span>
                         <svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M31.973 12.3887C30.7411 11.1443 29.2738 10.1577 27.6566 9.48642C26.0395 8.8151 24.3048 8.4725 22.5538 8.4786C15.2174 8.4786 9.23802 14.4579 9.23802 21.7944C9.23802 24.1458 9.85611 26.4301 11.0117 28.4456L9.13052 35.3521L16.1848 33.4978C18.1331 34.5593 20.3233 35.1237 22.5538 35.1237C29.8903 35.1237 35.8697 29.1443 35.8697 21.8078C35.8697 18.2471 34.4857 14.9014 31.973 12.3887ZM22.5538 32.8663C20.5652 32.8663 18.6169 32.3288 16.9104 31.3211L16.5073 31.0792L12.315 32.181L13.4303 28.0962L13.1615 27.6797C12.0567 25.9154 11.47 23.8761 11.4685 21.7944C11.4685 15.6941 16.4401 10.7225 22.5404 10.7225C25.4965 10.7225 28.2779 11.8781 30.3606 13.9742C31.3918 15.0007 32.2091 16.2217 32.7649 17.5664C33.3208 18.9111 33.6043 20.3528 33.5988 21.8078C33.6257 27.9081 28.6541 32.8663 22.5538 32.8663ZM28.6272 24.5893C28.2913 24.428 26.652 23.6218 26.3564 23.5009C26.0474 23.3934 25.8324 23.3396 25.604 23.6621C25.3756 23.998 24.744 24.7505 24.5559 24.9655C24.3678 25.1939 24.1662 25.2208 23.8303 25.0461C23.4944 24.8849 22.4195 24.5221 21.1564 23.3934C20.1621 22.5066 19.5037 21.4182 19.3021 21.0823C19.114 20.7463 19.2753 20.5717 19.4499 20.397C19.5977 20.2492 19.7859 20.0073 19.9471 19.8192C20.1083 19.6311 20.1755 19.4833 20.283 19.2683C20.3905 19.0399 20.3368 18.8518 20.2562 18.6905C20.1755 18.5293 19.5037 16.89 19.235 16.2182C18.9662 15.5732 18.6841 15.6538 18.4825 15.6404H17.8375C17.6091 15.6404 17.2598 15.721 16.9507 16.0569C16.6551 16.3928 15.7952 17.199 15.7952 18.8383C15.7952 20.4776 16.991 22.0631 17.1523 22.2781C17.3135 22.5066 19.5037 25.8657 22.836 27.3035C23.6288 27.6528 24.2469 27.8544 24.7306 28.0022C25.5234 28.2575 26.2489 28.2172 26.8267 28.1366C27.4717 28.0425 28.8019 27.3304 29.0707 26.551C29.3528 25.7717 29.3528 25.1133 29.2588 24.9655C29.1647 24.8177 28.9632 24.7505 28.6272 24.5893Z"
@@ -62,7 +65,7 @@
                             <circle cx="22.5" cy="22.5" r="21.5" stroke="white" stroke-width="2" />
                         </svg>
                     </div>
-                    <button class="header__button button-reset">Презентация проекта</button>
+                    <a class="header__button button-reset" href="./src/file/Буклет Для своих_compressed.pdf">Презентация проекта</a>
                     <button class="header__burger burger button-reset">
                         <span class="burger__line"></span>
                         <span class="burger__line"></span>
@@ -75,14 +78,14 @@
                         <p class="header__text">Жилой район, о котором говорят не всем. Берегут</p>
                     </div>
                     <div class="header__wrap header__wrap-2">
-                        <p class="header__text">Сдача проекта: X</p>
+                        <p class="header__text">Сдача проекта: 2028</p>
                         <h2 class="header__title">Своих</h2>
                     </div>
                 </div>
             </div>
         </header>
         <main>
-            <section class="about max-container">
+            <section class="about max-container" id="about">
                 <div class="about__container container">
                     <h2 class="about__title">О жилом районе</h2>
                     <div class="about__swiper swiper">
@@ -91,11 +94,22 @@
                                 <p class="slide__text p-reset">
                                     Место, где семья будет чувствовать себя в безопасности и наслаждаться жизнью, а не думать о быте и проблемах. 
                                 </p>
-                                <img class="slide__img" src="./src/img/slide1.jpg" alt="" />
+                                <img class="slide__img" src="./src/img/slide1.webp" alt="" loading="lazy" />
                             </div>
-                            <div class="swiper-slide">Slide 2</div>
-                            <div class="swiper-slide">Slide 3</div>
-                            <div class="swiper-slide">Slide 4</div>
+                            <div class="swiper-slide">
+                                <p class="slide__text p-reset">Территория с садом и лесами, спортивными и творческими активностями.</p>
+                                <img class="slide__img" src="./src/img/slide2.webp" alt="" loading="lazy" />
+                            </div>
+                            <div class="swiper-slide">
+                                <p class="slide__text p-reset">Дома, которые станут центром силы для всех родственников и друзей.</p>
+                                <img class="slide__img" src="./src/img/slide3.webp" alt="" loading="lazy" />
+                            </div>
+                            <div class="swiper-slide">
+                                <p class="slide__text p-reset">
+                                    Другими словами: здесь будет настолько хорошо, что этим захочется делиться. Но только с самыми близкими.
+                                </p>
+                                <img class="slide__img" src="./src/img/slide4.webp" alt="" loading="lazy" />
+                            </div>
                         </div>
                         <div class="swiper-pagination"></div>
                         <div class="swiper-button-prev">
@@ -117,9 +131,9 @@
                             <p class="p-reset about__text">
                                 <span class="about__text-line"> Район находится в сельском поселение Пенкино, Владимирская область.</span>
                                 <span class="about__text-line"> Здесь красивые виды на побережье Клязьмы, леса и сады. </span>
-                                <span class="about__text-line">До Владимира → 38 км </span>
-                                <span class="about__text-line"> До Суздаля → 60 км</span>
-                                <span class="about__text-line"> До Москвы → 240 км (по комфортной платной дороге) </span>
+                                <span class="about__text-line">До Владимира → 25 км </span>
+                                <span class="about__text-line"> До Суздаля → 56 км</span>
+                                <span class="about__text-line"> До Москвы → 235 км (по комфортной платной дороге) </span>
                             </p>
                             <button class="about__button button-reset">Заполнить заявку</button>
                         </div>
@@ -142,10 +156,10 @@
                         <div class="swiper-wrapper">
                             <div class="swiper-slide slide">
                                 <div class="slide__imgs">
-                                    <img src="./src/img/catalog1.jpg" alt="" />
+                                    <img src="./src/img/catalog1.webp" alt="" loading="lazy" />
                                     <div class="imgs__wrap">
-                                        <img src="./src/img/catalog2.jpg" alt="" />
-                                        <img src="./src/img/catalog3.jpg" alt="" />
+                                        <img src="./src/img/catalog2.webp" alt="" loading="lazy" />
+                                        <img src="./src/img/catalog3.webp" alt="" loading="lazy" />
                                     </div>
                                 </div>
                                 <div class="slide__wrap">
@@ -197,10 +211,10 @@
                             </div>
                             <div class="swiper-slide slide">
                                 <div class="slide__imgs">
-                                    <img src="./src/img/catalog1.jpg" alt="" />
+                                    <img src="./src/img/catalog1.webp" alt="" loading="lazy" />
                                     <div class="imgs__wrap">
-                                        <img src="./src/img/catalog2.jpg" alt="" />
-                                        <img src="./src/img/catalog3.jpg" alt="" />
+                                        <img src="./src/img/catalog2.webp" alt="" loading="lazy" />
+                                        <img src="./src/img/catalog3.webp" alt="" loading="lazy" />
                                     </div>
                                 </div>
                                 <div class="slide__wrap">
@@ -252,10 +266,10 @@
                             </div>
                             <div class="swiper-slide slide">
                                 <div class="slide__imgs">
-                                    <img src="./src/img/catalog1.jpg" alt="" />
+                                    <img src="./src/img/catalog1.webp" alt="" loading="lazy" />
                                     <div class="imgs__wrap">
-                                        <img src="./src/img/catalog2.jpg" alt="" />
-                                        <img src="./src/img/catalog3.jpg" alt="" />
+                                        <img src="./src/img/catalog2.webp" alt="" loading="lazy" />
+                                        <img src="./src/img/catalog3.webp" alt="" loading="lazy" />
                                     </div>
                                 </div>
                                 <div class="slide__wrap">
@@ -307,10 +321,10 @@
                             </div>
                             <div class="swiper-slide slide">
                                 <div class="slide__imgs">
-                                    <img src="./src/img/catalog1.jpg" alt="" />
+                                    <img src="./src/img/catalog1.webp" alt="" loading="lazy" />
                                     <div class="imgs__wrap">
-                                        <img src="./src/img/catalog2.jpg" alt="" />
-                                        <img src="./src/img/catalog3.jpg" alt="" />
+                                        <img src="./src/img/catalog2.webp" alt="" loading="lazy" />
+                                        <img src="./src/img/catalog3.webp" alt="" loading="lazy" />
                                     </div>
                                 </div>
                                 <div class="slide__wrap">
@@ -378,10 +392,10 @@
                         <div class="swiper-wrapper">
                             <div class="swiper-slide slide">
                                 <div class="slide__imgs">
-                                    <img src="./src/img/catalog1.jpg" alt="" />
+                                    <img src="./src/img/catalog1.webp" alt="" loading="lazy" />
                                     <div class="imgs__wrap">
-                                        <img src="./src/img/catalog2.jpg" alt="" />
-                                        <img src="./src/img/catalog3.jpg" alt="" />
+                                        <img src="./src/img/catalog2.webp" alt="" loading="lazy" />
+                                        <img src="./src/img/catalog3.webp" alt="" loading="lazy" />
                                     </div>
                                 </div>
                                 <div class="slide__wrap">
@@ -433,10 +447,10 @@
                             </div>
                             <div class="swiper-slide slide">
                                 <div class="slide__imgs">
-                                    <img src="./src/img/catalog1.jpg" alt="" />
+                                    <img src="./src/img/catalog1.webp" alt="" loading="lazy" />
                                     <div class="imgs__wrap">
-                                        <img src="./src/img/catalog2.jpg" alt="" />
-                                        <img src="./src/img/catalog3.jpg" alt="" />
+                                        <img src="./src/img/catalog2.webp" alt="" loading="lazy" />
+                                        <img src="./src/img/catalog3.webp" alt="" loading="lazy" />
                                     </div>
                                 </div>
                                 <div class="slide__wrap">
@@ -488,10 +502,10 @@
                             </div>
                             <div class="swiper-slide slide">
                                 <div class="slide__imgs">
-                                    <img src="./src/img/catalog1.jpg" alt="" />
+                                    <img src="./src/img/catalog1.webp" alt="" loading="lazy" />
                                     <div class="imgs__wrap">
-                                        <img src="./src/img/catalog2.jpg" alt="" />
-                                        <img src="./src/img/catalog3.jpg" alt="" />
+                                        <img src="./src/img/catalog2.webp" alt="" loading="lazy" />
+                                        <img src="./src/img/catalog3.webp" alt="" loading="lazy" />
                                     </div>
                                 </div>
                                 <div class="slide__wrap">
@@ -543,10 +557,10 @@
                             </div>
                             <div class="swiper-slide slide">
                                 <div class="slide__imgs">
-                                    <img src="./src/img/catalog1.jpg" alt="" />
+                                    <img src="./src/img/catalog1.webp" alt="" loading="lazy" />
                                     <div class="imgs__wrap">
-                                        <img src="./src/img/catalog2.jpg" alt="" />
-                                        <img src="./src/img/catalog3.jpg" alt="" />
+                                        <img src="./src/img/catalog2.webp" alt="" loading="lazy" />
+                                        <img src="./src/img/catalog3.webp" alt="" loading="lazy" />
                                     </div>
                                 </div>
                                 <div class="slide__wrap">
@@ -614,10 +628,10 @@
                         <div class="swiper-wrapper">
                             <div class="swiper-slide slide">
                                 <div class="slide__imgs">
-                                    <img src="./src/img/catalog1.jpg" alt="" />
+                                    <img src="./src/img/catalog1.webp" alt="" loading="lazy" />
                                     <div class="imgs__wrap">
-                                        <img src="./src/img/catalog2.jpg" alt="" />
-                                        <img src="./src/img/catalog3.jpg" alt="" />
+                                        <img src="./src/img/catalog2.webp" alt="" loading="lazy" />
+                                        <img src="./src/img/catalog3.webp" alt="" loading="lazy" />
                                     </div>
                                 </div>
                                 <div class="slide__wrap">
@@ -669,10 +683,10 @@
                             </div>
                             <div class="swiper-slide slide">
                                 <div class="slide__imgs">
-                                    <img src="./src/img/catalog1.jpg" alt="" />
+                                    <img src="./src/img/catalog1.webp" alt="" loading="lazy" />
                                     <div class="imgs__wrap">
-                                        <img src="./src/img/catalog2.jpg" alt="" />
-                                        <img src="./src/img/catalog3.jpg" alt="" />
+                                        <img src="./src/img/catalog2.webp" alt="" loading="lazy" />
+                                        <img src="./src/img/catalog3.webp" alt="" loading="lazy" />
                                     </div>
                                 </div>
                                 <div class="slide__wrap">
@@ -724,10 +738,10 @@
                             </div>
                             <div class="swiper-slide slide">
                                 <div class="slide__imgs">
-                                    <img src="./src/img/catalog1.jpg" alt="" />
+                                    <img src="./src/img/catalog1.webp" alt="" loading="lazy" />
                                     <div class="imgs__wrap">
-                                        <img src="./src/img/catalog2.jpg" alt="" />
-                                        <img src="./src/img/catalog3.jpg" alt="" />
+                                        <img src="./src/img/catalog2.webp" alt="" loading="lazy" />
+                                        <img src="./src/img/catalog3.webp" alt="" loading="lazy" />
                                     </div>
                                 </div>
                                 <div class="slide__wrap">
@@ -779,10 +793,10 @@
                             </div>
                             <div class="swiper-slide slide">
                                 <div class="slide__imgs">
-                                    <img src="./src/img/catalog1.jpg" alt="" />
+                                    <img src="./src/img/catalog1.webp" alt="" loading="lazy" />
                                     <div class="imgs__wrap">
-                                        <img src="./src/img/catalog2.jpg" alt="" />
-                                        <img src="./src/img/catalog3.jpg" alt="" />
+                                        <img src="./src/img/catalog2.webp" alt="" loading="lazy" />
+                                        <img src="./src/img/catalog3.webp" alt="" loading="lazy" />
                                     </div>
                                 </div>
                                 <div class="slide__wrap">
@@ -850,10 +864,10 @@
                         <div class="swiper-wrapper">
                             <div class="swiper-slide slide">
                                 <div class="slide__imgs">
-                                    <img src="./src/img/catalog1.jpg" alt="" />
+                                    <img src="./src/img/catalog1.webp" alt="" loading="lazy" />
                                     <div class="imgs__wrap">
-                                        <img src="./src/img/catalog2.jpg" alt="" />
-                                        <img src="./src/img/catalog3.jpg" alt="" />
+                                        <img src="./src/img/catalog2.webp" alt="" loading="lazy" />
+                                        <img src="./src/img/catalog3.webp" alt="" loading="lazy" />
                                     </div>
                                 </div>
                                 <div class="slide__wrap">
@@ -905,10 +919,10 @@
                             </div>
                             <div class="swiper-slide slide">
                                 <div class="slide__imgs">
-                                    <img src="./src/img/catalog1.jpg" alt="" />
+                                    <img src="./src/img/catalog1.webp" alt="" loading="lazy" />
                                     <div class="imgs__wrap">
-                                        <img src="./src/img/catalog2.jpg" alt="" />
-                                        <img src="./src/img/catalog3.jpg" alt="" />
+                                        <img src="./src/img/catalog2.webp" alt="" loading="lazy" />
+                                        <img src="./src/img/catalog3.webp" alt="" loading="lazy" />
                                     </div>
                                 </div>
                                 <div class="slide__wrap">
@@ -927,6 +941,7 @@
                                         </p>
                                         <p class="slide__text p-reset">
                                             <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                none !important;
                                                 <path
                                                     d="M11 21C16.5228 21 21 16.5228 21 11C21 5.47715 16.5228 1 11 1C5.47715 1 1 5.47715 1 11C1 16.5228 5.47715 21 11 21Z"
                                                     stroke="#EDE4DB"
@@ -960,10 +975,10 @@
                             </div>
                             <div class="swiper-slide slide">
                                 <div class="slide__imgs">
-                                    <img src="./src/img/catalog1.jpg" alt="" />
+                                    <img src="./src/img/catalog1.webp" alt="" loading="lazy" />
                                     <div class="imgs__wrap">
-                                        <img src="./src/img/catalog2.jpg" alt="" />
-                                        <img src="./src/img/catalog3.jpg" alt="" />
+                                        <img src="./src/img/catalog2.webp" alt="" loading="lazy" />
+                                        <img src="./src/img/catalog3.webp" alt="" loading="lazy" />
                                     </div>
                                 </div>
                                 <div class="slide__wrap">
@@ -1015,10 +1030,10 @@
                             </div>
                             <div class="swiper-slide slide">
                                 <div class="slide__imgs">
-                                    <img src="./src/img/catalog1.jpg" alt="" />
+                                    <img src="./src/img/catalog1.webp" alt="" loading="lazy" />
                                     <div class="imgs__wrap">
-                                        <img src="./src/img/catalog2.jpg" alt="" />
-                                        <img src="./src/img/catalog3.jpg" alt="" />
+                                        <img src="./src/img/catalog2.webp" alt="" loading="lazy" />
+                                        <img src="./src/img/catalog3.webp" alt="" loading="lazy" />
                                     </div>
                                 </div>
                                 <div class="slide__wrap">
@@ -1086,7 +1101,7 @@
                         <p class="tour__text">Посмотрите, как будет выглядеть ваш будущий участок:</p>
                         <div class="tour__wrap">
                             <p class="tour__text">3D-тур по жилому району Для Своих</p>
-                            <button class="tour__button button-reset">Смотреть</button>
+                            <a class="tour__button button-reset" href="https://vrcity.pro/gallery/vskstroy/tour.html">Смотреть</a>
                         </div>
                     </div>
                 </div>
@@ -1097,7 +1112,7 @@
                     <div class="characteristics__cards">
                         <div class="characteristics__card card">
                             <h3 class="card__title">Семья</h3>
-                            <img src="./src/img/characteristics1.jpg" alt="" class="card__img" />
+                            <img src="./src/img/characteristics1.webp" alt="" class="card__img" loading="lazy" />
                             <ul class="card__list list">
                                 <li class="list__item item">— Школа и детский сад поблизости к району</li>
                                 <li class="list__item item">— Детский клуб</li>
@@ -1107,7 +1122,7 @@
                         </div>
                         <div class="characteristics__card card">
                             <h3 class="card__title">комфорт</h3>
-                            <img src="./src/img/characteristics2.jpg" alt="" class="card__img" />
+                            <img src="./src/img/characteristics2.webp" alt="" class="card__img" loading="lazy" />
                             <ul class="card__list list">
                                 <li class="list__item item">— Собственная сервисная компания, которая занимается вопросами ЖКХ напрямую</li>
                                 <li class="list__item item">— Оптоволоконный интернет в дома и Wi-Fi на территории района</li>
@@ -1115,7 +1130,7 @@
                         </div>
                         <div class="characteristics__card card">
                             <h3 class="card__title">культура</h3>
-                            <img src="./src/img/characteristics3.jpg" alt="" class="card__img" />
+                            <img src="./src/img/characteristics3.webp" alt="" class="card__img" loading="lazy" />
                             <ul class="card__list list">
                                 <li class="list__item item">— Кинотеатр под открытым небом</li>
                                 <li class="list__item item">— Творческие кружки</li>
@@ -1124,7 +1139,7 @@
                         </div>
                         <div class="characteristics__card card">
                             <h3 class="card__title">Спорт</h3>
-                            <img src="./src/img/characteristics4.jpg" alt="" class="card__img" />
+                            <img src="./src/img/characteristics4.webp" alt="" class="card__img" loading="lazy" />
                             <ul class="card__list list">
                                 <li class="list__item item">— Теннисный корт и минифутбольное поле</li>
                                 <li class="list__item item">— Клуб йоги</li>
@@ -1133,7 +1148,7 @@
                         </div>
                         <div class="characteristics__card card">
                             <h3 class="card__title">безопасность</h3>
-                            <img src="./src/img/characteristics5.jpg" alt="" class="card__img" />
+                            <img src="./src/img/characteristics5.webp" alt="" class="card__img" loading="lazy" />
                             <ul class="card__list list">
                                 <li class="list__item item">— Охрана территории</li>
                                 <li class="list__item item">— Круглосуточное видеонаблюдение</li>
@@ -1160,15 +1175,15 @@
                         </div>
                     </div>
                     <aside class="homeForFamily__plan">
-                        <img src="./src/img/homeForFamily_plan.jpg" alt="" />
+                        <img src="./src/img/homeForFamily_plan.webp" alt="" />
                         <p class="homeForFamily__text p-reset">Выберите участок и дом на интерактивном генплане</p>
                         <button class="homeForFamily__button button-reset">Открыть генплан</button>
                     </aside>
                     <div class="homeForFamily__map">
                         <aside class="homeForFamily__info">
                             <p class="homeForFamily__size p-reset">
-                                <span class="homeForFamily__size-line">9999,99</span>
-                                <span class="homeForFamily__size-line">гектара</span>
+                                <span class="homeForFamily__size-line">27</span>
+                                <span class="homeForFamily__size-line">гектар</span>
                             </p>
                             <p class="homeForFamily_text p-reset">Общая площадь территории</p>
                         </aside>
@@ -1184,7 +1199,7 @@
                     <div class="pluses__cards">
                         <div class="pluses__card card">
                             <h3 class="card__title">Дом</h3>
-                            <img src="./src/img/pluses1.jpg" alt="" class="card__img" />
+                            <img src="./src/img/pluses1.webp" alt="" class="card__img" loading="lazy" />
                             <ul class="card__list list">
                                 <li class="list__item item">— Качественные материалы: от фундамента до отделки</li>
                                 <li class="list__item item">— Современный дизайн, который создан не только для красоты, но и комфорта</li>
@@ -1196,7 +1211,7 @@
                         </div>
                         <div class="pluses__card card">
                             <h3 class="card__title">Улица</h3>
-                            <img src="./src/img/pluses2.jpg" alt="" class="card__img" />
+                            <img src="./src/img/pluses2.webp" alt="" class="card__img" loading="lazy" />
                             <ul class="card__list list">
                                 <li class="list__item item">— Дороги и тротуары, сделанные на совесть</li>
                                 <li class="list__item item">— Освещение улиц и видеонаблюдение</li>
@@ -1206,7 +1221,7 @@
                         </div>
                         <div class="pluses__card card">
                             <h3 class="card__title">Район</h3>
-                            <img src="./src/img/pluses3.jpg" alt="" class="card__img" />
+                            <img src="./src/img/pluses3.webp" alt="" class="card__img" loading="lazy" />
                             <ul class="card__list list">
                                 <li class="list__item item">
                                     — Собственное отопление, газопровод, высокоскоростной интернет к домам и Wi-Fi, который покрывает всю территорию
@@ -1226,7 +1241,7 @@
                     <div class="building__wrap">
                         <h2 class="building__title">Ход строительства</h2>
                         <button class="building__button button-reset">Онлайн-просмотр</button>
-                        <p class="building__text p-reset">Сдача проекта: X</p>
+                        <p class="building__text p-reset">Сдача проекта: 2028</p>
                     </div>
                     <div class="building__card card">
                         <div class="card__content">
@@ -1237,17 +1252,73 @@
                             <p class="card__text p-reset">
                                 Все подробности проекта с детальным описанием домов, района и его преимуществ есть в нашей презентации.
                             </p>
-                            <button class="card__button button-reset">Получить презентацию проекта</button>
+                            <a class="card__button button-reset" href="./src/file/Буклет Для своих_compressed.pdf"> Получить презентацию проекта </a>
                         </div>
-                        <img src="./src/img/building.jpg" alt="" />
+                        <img src="./src/img/building.webp" alt="" loading="lazy" />
                     </div>
                     <div class="building__videos">
                         <div class="building__swiper swiper">
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide"><img src="./src/img/video.jpg" class="building__video" /></div>
-                                <div class="swiper-slide"><img src="./src/img/video.jpg" class="building__video" /></div>
-                                <div class="swiper-slide"><img src="./src/img/video.jpg" class="building__video" /></div>
-                                <div class="swiper-slide"><img src="./src/img/video.jpg" class="building__video" /></div>
+                                <div class="swiper-slide">
+                                    <iframe
+                                        width="100%"
+                                        height="555"
+                                        src="https://www.youtube.com/embed/ftbCH9qLXTo?si=bC0TvIUrYmjR6nyt"
+                                        title="YouTube video player"
+                                        frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerpolicy="strict-origin-when-cross-origin"
+                                        allowfullscreen
+                                    ></iframe>
+                                </div>
+                                <div class="swiper-slide">
+                                    <iframe
+                                        width="100%"
+                                        height="555"
+                                        src="https://www.youtube.com/embed/kqlUqqpfWAE?si=NMDK_3ZNgCAGMhmO"
+                                        title="YouTube video player"
+                                        frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerpolicy="strict-origin-when-cross-origin"
+                                        allowfullscreen
+                                    ></iframe>
+                                </div>
+                                <div class="swiper-slide">
+                                    <iframe
+                                        width="100%"
+                                        height="555"
+                                        src="https://www.youtube.com/embed/3inJNdZRwLk?si=oN9F9z-g3NTrAzes"
+                                        title="YouTube video player"
+                                        frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerpolicy="strict-origin-when-cross-origin"
+                                        allowfullscreen
+                                    ></iframe>
+                                </div>
+                                <div class="swiper-slide">
+                                    <iframe
+                                        width="100%"
+                                        height="555"
+                                        src="https://www.youtube.com/embed/78iOwhiycwA?si=awybqtUD2dPu7OdD"
+                                        title="YouTube video player"
+                                        frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerpolicy="strict-origin-when-cross-origin"
+                                        allowfullscreen
+                                    ></iframe>
+                                </div>
+                                <div class="swiper-slide">
+                                    <iframe
+                                        width="100%"
+                                        height="555"
+                                        src="https://www.youtube.com/embed/htMSAlv5I3E?si=pBtuX1s6KxYjyjPS"
+                                        title="YouTube video player"
+                                        frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerpolicy="strict-origin-when-cross-origin"
+                                        allowfullscreen
+                                    ></iframe>
+                                </div>
                             </div>
                             <div class="swiper-button-prev">
                                 <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1316,11 +1387,10 @@
                 </div>
                 <div class="footer__nav nav">
                     <ul class="nav__list list">
-                        <li class="list__item">Каталог</li>
-                        <li class="list__item">Галерея</li>
-                        <li class="list__item">Отзывы</li>
-                        <li class="list__item">Контакты</li>
-                        <li class="list__item">Условия оплаты</li>
+                        <li class="list__item footer__item footer__item-1">О жилом районе</li>
+                        <li class="list__item footer__item footer__item-2">Расположение</li>
+                        <li class="list__item footer__item footer__item-3">Каталог домов</li>
+                        <li class="list__item footer__item footer__item-4">Выбрать дом</li>
                     </ul>
                 </div>
                 <div class="footer__network">
@@ -1470,5 +1540,6 @@
                 </div>
             </div>
         </footer>
+        <script src="//cdn.callibri.ru/callibri.js" type="text/javascript" charset="utf-8" defer></script>
     </body>
 </html>

@@ -41,7 +41,7 @@ body {
 }
 
 .header {
-    background-image: url('../img/header_bg.jpg');
+    background-image: url('../img/header_bg.webp');
     background-size: cover;
     &__container {
         max-width: 2320px;
@@ -125,6 +125,8 @@ body {
             }
 
             .header__button {
+                display: inline-block;
+                text-decoration: none !important;
                 background-color: #ffffff;
                 border-radius: 12px;
                 color: $primary-dark;
@@ -607,7 +609,8 @@ body {
                     margin-bottom: 40px;
                 }
                 .tour__button {
-                    width: 230px;
+                    text-decoration: none;
+                    color: black;
                     font-size: 18px;
                     padding: 16px 72px;
                     border-radius: 12px;
@@ -784,9 +787,10 @@ body {
             }
         }
         .homeForFamily__map {
-            background-image: url('../img/homeForFamily.jpg');
+            background-image: url('../img/homeForFamily.webp');
             min-height: 1440px;
             position: relative;
+            background-size: cover;
             .homeForFamily__info {
                 position: absolute;
                 bottom: 61px;
@@ -938,6 +942,9 @@ body {
                     line-height: 130%;
                 }
                 .card__button {
+                    display: inline-block;
+                    text-decoration: none !important;
+                    color: $black;
                     background-color: $beige;
                     font-size: 18px;
                     padding: 16px 48px;
