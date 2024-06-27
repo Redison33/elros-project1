@@ -146,7 +146,7 @@
                 }
             }
             .catalog__tabs {
-                max-width: 400px;
+                max-width: 270px;
                 .catalog__tab {
                     padding: 12px 22px;
                     font-size: 14px;
@@ -158,16 +158,42 @@
                     .slide {
                         min-height: 400px;
                         &__imgs {
-                            img {
-                                width: 100%;
-                            }
                             .imgs__wrap {
                                 justify-content: space-between;
+                                .minor-img {
+                                    max-height: 175px;
+                                }
+                                span {
+                                    max-height: 175px;
+                                }
                             }
                         }
                     }
                     .swiper-slide-active {
                         transform: none;
+                        .slide__imgs {
+                            .imgs__wrap {
+                                .minor-img {
+                                    &:hover {
+                                        transform: none;
+                                    }
+                                }
+                                span {
+                                    &:hover {
+                                        overflow: hidden;
+                                        img {
+                                            border-radius: 0;
+                                            transform: none;
+                                        }
+                                    }
+                                }
+                            }
+                            .main-img {
+                                &:hover {
+                                    transform: none;
+                                }
+                            }
+                        }
                     }
                 }
                 .swiper-button-prev {

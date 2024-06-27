@@ -12,7 +12,8 @@ html {
 }
 
 img {
-    max-width: 100%;
+    // width: 100%;
+    // max-width: 100%;
 }
 
 body {
@@ -86,39 +87,51 @@ body {
             }
             .header__number {
                 font-size: 24px;
-                color: #ffffff;
+
                 display: flex;
                 align-items: center;
                 gap: 16px;
                 transition: color 0.3s ease-in-out;
-                cursor: pointer;
-                svg {
-                    path {
-                        transition: fill 0.3s ease-in-out;
+                .number {
+                    text-decoration: none;
+                    cursor: pointer;
+                    color: #ffffff;
+                    transition: color 0.3s ease-in-out;
+                    &:hover {
+                        color: $hover-white;
                     }
-                    circle {
-                        transition: stroke 0.3s ease-in-out;
-                    }
-                }
-                &:hover {
-                    color: $hover-white;
-                    svg {
-                        path {
-                            fill: $hover-white;
-                        }
-                        circle {
-                            stroke: $hover-white;
-                        }
+                    &:active {
+                        color: $active-white;
                     }
                 }
-                &:active {
-                    color: $active-white;
+                .whatsapp {
+                    cursor: pointer;
                     svg {
                         path {
-                            fill: $active-white;
+                            transition: fill 0.3s ease-in-out;
                         }
                         circle {
-                            stroke: $active-white;
+                            transition: stroke 0.3s ease-in-out;
+                        }
+                    }
+                    &:hover {
+                        svg {
+                            path {
+                                fill: $hover-white;
+                            }
+                            circle {
+                                stroke: $hover-white;
+                            }
+                        }
+                    }
+                    &:active {
+                        svg {
+                            path {
+                                fill: $active-white;
+                            }
+                            circle {
+                                stroke: $active-white;
+                            }
                         }
                     }
                 }
@@ -388,6 +401,7 @@ body {
 }
 
 .catalog {
+    overflow-x: hidden;
     margin-bottom: 149px;
     &__container {
         max-width: 2332px;
@@ -412,7 +426,7 @@ body {
             }
         }
         .catalog__tabs {
-            max-width: 658px;
+            max-width: 394px;
             margin: 0 auto;
             text-align: center;
             display: flex;
@@ -447,9 +461,31 @@ body {
                 }
             }
         }
+        .catalog__swiper-1 {
+            .swiper-wrapper {
+                .slide {
+                    &__imgs {
+                        .imgs__wrap {
+                            span {
+                                // display: block;
+                                // width: 49%;
+                                img {
+                                    // min-width: 80%;
+                                    // height: 100%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
         .swiper {
             padding-bottom: 212px;
             margin-bottom: 64px;
+            overflow: visible;
+            // overflow-x: scroll;
+            overflow-y: visible;
+            // overflow-x: hidden;
             // &--hidden {
             display: none;
             // }
@@ -457,27 +493,93 @@ body {
                 display: flex;
             }
             &-wrapper {
+                overflow-y: visible;
                 align-items: start;
                 .slide {
+                    overflow-y: visible;
+                    position: relative;
                     box-sizing: border-box;
                     min-height: 613px;
                     padding: 35px;
                     background-color: $primary-light;
                     border-radius: 33px;
                     opacity: 0.3;
+                    z-index: 10000;
                     &__imgs {
                         margin-bottom: 28px;
                         .imgs__wrap {
                             display: flex;
                             gap: 10px;
-                            img {
+                            // min-height: 147px;
+                            // max-height: 147px;
+                            // height: 175px;
+                            .minor-img {
                                 margin: 0;
+                                width: 49%;
+                                // height: 175px;
+                                border-radius: 20px;
+                                object-fit: cover;
+                                object-position: top center;
+                                display: block;
+                                max-height: 175px;
+                                // &:hover {
+                                //     border-radius: 20px;
+                                //     z-index: 1;
+                                //     transform: scale(300%);
+                                // }
+                            }
+                            span {
+                                display: flex;
                                 max-width: 49%;
+                                justify-content: center;
+                                align-items: center;
+                                background-color: #ffffff;
+                                border-radius: 20px;
+                                overflow: hidden;
+                                // padding: 16px 0;
+                                max-height: 175px;
+                                img {
+                                    // display: block;
+                                    // max-height: 147px;
+                                    // height: 100%;
+                                    // width: 100%;
+                                    // max-width: 100%;
+                                    // object-fit: cover;
+                                    // max-height: 175px;
+                                    height: 100%;
+                                }
+                                // &:hover {
+                                //     // position: absolute;
+                                //     // top: 0;
+                                //     // left: 0;
+                                //     // bottom: 0;
+                                //     // right: 0;
+                                //     overflow: visible;
+                                //     img {
+                                //         border-radius: 20px;
+                                //         z-index: 1;
+                                //         transform: scale(300%);
+                                //     }
+                                // }
                             }
                         }
-                        img {
+                        .main-img {
                             border-radius: 20px;
                             margin-bottom: 10px;
+                            width: 100%;
+                            object-fit: cover;
+                            object-position: top center;
+                            max-height: 320px;
+
+                            // &:hover {
+                            //     // position: fixed;
+                            //     // top: 0;
+                            //     // left: 0;
+                            //     // bottom: 0;
+                            //     // right: 0;
+                            //     // z-index: 1;
+                            //     transform: scale(150%);
+                            // }
                         }
                     }
                     &__wrap {
@@ -524,9 +626,42 @@ body {
                     }
                 }
                 .swiper-slide-active {
+                    z-index: 100000;
                     opacity: 1;
                     transition: transform 0.3s ease-in-out;
-                    transform: translateY(57px) scale(1.19);
+                    transform: translateY(65px) scale(1.19);
+                    .slide__imgs {
+                        .imgs__wrap {
+                            .minor-img {
+                                &:hover {
+                                    // border-radius: 20px;
+                                    width: auto;
+                                    object-fit: contain;
+                                    transform: scale(300%);
+                                }
+                            }
+                            span {
+                                &:hover {
+                                    // position: absolute;
+                                    // top: 0;
+                                    // left: 0;
+                                    // bottom: 0;
+                                    // right: 0;
+                                    overflow: visible;
+                                    img {
+                                        border-radius: 20px;
+                                        z-index: 1;
+                                        transform: scale(300%);
+                                    }
+                                }
+                            }
+                        }
+                        .main-img {
+                            &:hover {
+                                transform: scale(150%);
+                            }
+                        }
+                    }
                 }
             }
             &-button-prev {
@@ -657,6 +792,7 @@ body {
                 }
 
                 &__img {
+                    width: 100%;
                     border-radius: 42px;
                     margin-bottom: 24px;
                 }
@@ -761,6 +897,7 @@ body {
             border-radius: 32px;
             background-color: #ffffff;
             img {
+                width: 100%;
                 border-radius: 32px;
             }
             .homeForFamily__text {
@@ -770,6 +907,8 @@ body {
                 line-height: 125%;
             }
             .homeForFamily__button {
+                display: inline-block;
+                text-decoration: none;
                 background-color: $primary-light;
                 color: #ffffff;
                 font-size: 16px;
@@ -865,6 +1004,7 @@ body {
                 }
 
                 &__img {
+                    width: 100%;
                     border-radius: 42px;
                     margin-bottom: 24px;
                 }

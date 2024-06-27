@@ -123,6 +123,8 @@
             .catalog__tabs {
                 flex-wrap: wrap;
                 gap: 10px;
+                justify-content: center;
+                max-width: unset;
                 .catalog__tab {
                     padding: 10px 20px;
                     font-size: 14px;
@@ -134,11 +136,20 @@
                         min-height: 300px;
                         padding: 12px;
                         &__imgs {
-                            img {
+                            .main-img {
                                 margin: 0;
                             }
                             .imgs__wrap {
                                 gap: 0;
+                            }
+                            .imgs__wrap {
+                                justify-content: space-between;
+                                .minor-img {
+                                    max-height: 125px;
+                                }
+                                span {
+                                    max-height: 125px;
+                                }
                             }
                         }
                         &__wrap {

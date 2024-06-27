@@ -125,7 +125,7 @@
                 }
             }
             .catalog__tabs {
-                max-width: 500px;
+                max-width: 300px;
                 .catalog__tab {
                     padding: 15px 25px;
                     font-size: 16px;
@@ -135,6 +135,50 @@
                 &-wrapper {
                     .slide {
                         min-height: 400px;
+                        &__imgs {
+                            // margin-bottom: 28px;
+                            .imgs__wrap {
+                                .minor-img {
+                                    // margin: 0;
+                                    // max-width: 49%;
+                                    // // height: 175px;
+                                    // border-radius: 20px;
+                                    // object-fit: cover;
+                                    // object-position: top center;
+                                    // display: block;
+                                    max-height: 125px;
+                                }
+                                span {
+                                    // display: flex;
+                                    // min-width: 49%;
+                                    // justify-content: center;
+                                    // align-items: center;
+                                    // background-color: #ffffff;
+                                    // border-radius: 20px;
+                                    // overflow: hidden;
+                                    max-height: 125px;
+                                    img {
+                                        // min-width: none;
+                                        // display: block;
+                                        // // max-height: 147px;
+                                        // height: 100%;
+                                    }
+                                }
+                            }
+                            .main-img {
+                                // border-radius: 20px;
+                                // margin-bottom: 10px;
+                                // width: 100%;
+                                // object-fit: cover;
+                                // object-position: top center;
+                                // max-height: 320px;
+                            }
+                        }
+                    }
+                    .swiper-slide-active {
+                        // opacity: 1;
+                        transition: transform 0.3s ease-in-out;
+                        transform: translateY(60px) scale(1.19);
                     }
                 }
                 .swiper-button-prev {

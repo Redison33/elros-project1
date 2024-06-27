@@ -38,7 +38,7 @@ window.addEventListener('DOMContentLoaded', () => {
             960: {
                 slidesPerView: 2,
             },
-            320: {
+            319: {
                 slidesPerView: 1,
             },
         },
@@ -192,6 +192,46 @@ window.addEventListener('DOMContentLoaded', () => {
     btnNav8.addEventListener('click', () => {
         document.querySelector('.homeForFamily').scrollIntoView({ behavior: 'smooth' });
     });
+    // document
+    //     .querySelector('.catalog__swiper')
+    //     .querySelector('.swiper-button-prev')
+    //     .addEventListener('click', () => {
+    //         for (const img of document.querySelector('.catalog__swiper').querySelector('.swiper-slide-active').querySelectorAll('img')) {
+    //             img.addEventListener('mouseenter', () => {
+    //                 img.style.position = 'fixed';
+    //                 // body.append(img);
+    //             });
+    //             img.addEventListener('mouseover', () => {
+    //                 img.removeAttribute(style);
+    //             });
+    //         }
+    //     });
+    // document
+    //     .querySelector('.catalog__swiper')
+    //     .querySelector('.swiper-button-next')
+    //     .addEventListener('click', () => {
+    //         for (const img of document.querySelector('.catalog__swiper').querySelector('.swiper-slide-active').querySelectorAll('img')) {
+    //             img.addEventListener('mouseenter', () => {
+    //                 img.style.position = 'fixed';
+    //                 // body.append(img);
+    //             });
+    //             img.addEventListener('mouseover', () => {
+    //                 img.removeAttribute(style);
+    //             });
+    //         }
+    //     });
+    // for (const img of document.querySelector('.catalog__swiper').querySelector('.swiper-slide-active').querySelectorAll('img')) {
+    //     img.addEventListener('mouseenter', () => {
+    //         // img.style.position = 'fixed';
+    //         // body.append(img);
+    //         console.log(1);
+    //     });
+    //     img.addEventListener('mouseover', () => {
+    //         // img.removeAttribute(style);
+    //         console.log(2);
+    //     });
+    // }
+
     (function (m, e, t, r, i, k, a) {
         m[i] =
             m[i] ||
