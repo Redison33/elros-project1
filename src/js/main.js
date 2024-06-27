@@ -286,20 +286,84 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 $(function () {
   $(document).ready(function () {
-    $(".swiper-slide-active .slide__imgs .main-img")
-      .wrap('<span style="display:inline-block; border-radius: 20px;"></span>')
+    $(".swiper-slide-active .slide__imgs span .main-img")
       .css("display", "block")
       .parent()
       .zoom();
-    $(".swiper-slide-active .slide__imgs .imgs__wrap .minor-img")
-      .wrap('<div style="display:block; border-radius: 20px"></div>')
+    $(".swiper-slide-active .slide__imgs .imgs__wrap div .minor-img")
       .css("display", "block")
       .parent()
       .zoom();
     $(".swiper-slide-active .slide__imgs .imgs__wrap span img")
-      // .wrap('<span style="display:inline-block"></span>')
       .css("display", "block")
       .parent()
       .zoom();
+    let catalogTab = document.querySelectorAll(".catalog__tab");
+    catalogTab[1].addEventListener("click", () => {
+      $(".swiper-slide-active .slide__imgs span .main-img")
+        .css("display", "block")
+        .parent()
+        .zoom();
+      $(".swiper-slide-active .slide__imgs .imgs__wrap div .minor-img")
+        .css("display", "block")
+        .parent()
+        .zoom();
+      $(".swiper-slide-active .slide__imgs .imgs__wrap span img")
+        .css("display", "block")
+        .parent()
+        .zoom();
+    });
+    $(".swiper-button-prev").click(() => {
+      $(".swiper-slide-active .slide__imgs span .main-img")
+        .css("display", "block")
+        .parent()
+        .zoom();
+      $(".swiper-slide-active .slide__imgs .imgs__wrap div .minor-img")
+        .css("display", "block")
+        .parent()
+        .zoom();
+      $(".swiper-slide-active .slide__imgs .imgs__wrap span img")
+        .css("display", "block")
+        .parent()
+        .zoom();
+      $(".swiper-slide-next .slide__imgs .main-img")
+        .css("display", "block")
+        .parent()
+        .trigger("zoom.destroy");
+      $(".swiper-slide-next .slide__imgs .imgs__wrap .minor-img")
+        .css("display", "block")
+        .parent()
+        .trigger("zoom.destroy");
+      $(".swiper-slide-next .slide__imgs .imgs__wrap span img")
+        .css("display", "block")
+        .parent()
+        .trigger("zoom.destroy");
+    });
+    $(".swiper-button-next").click(() => {
+      $(".swiper-slide-active .slide__imgs span .main-img")
+        .css("display", "block")
+        .parent()
+        .zoom();
+      $(".swiper-slide-active .slide__imgs .imgs__wrap div .minor-img")
+        .css("display", "block")
+        .parent()
+        .zoom();
+      $(".swiper-slide-active .slide__imgs .imgs__wrap span img")
+        .css("display", "block")
+        .parent()
+        .zoom();
+      $(".swiper-slide-prev .slide__imgs .main-img")
+        .css("display", "block")
+        .parent()
+        .trigger("zoom.destroy");
+      $(".swiper-slide-prev .slide__imgs .imgs__wrap .minor-img")
+        .css("display", "block")
+        .parent()
+        .trigger("zoom.destroy");
+      $(".swiper-slide-prev .slide__imgs .imgs__wrap span img")
+        .css("display", "block")
+        .parent()
+        .trigger("zoom.destroy");
+    });
   });
 });
