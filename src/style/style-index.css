@@ -514,7 +514,7 @@ body {
   background-color: #ffffff;
   border-radius: 20px;
   overflow: hidden;
-  max-height: 145px;
+  max-height: 165px;
 }
 .catalog__container .swiper-wrapper .slide__imgs .imgs__wrap span img {
   display: block;
