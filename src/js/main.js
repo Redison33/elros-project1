@@ -18,10 +18,13 @@ window.addEventListener('DOMContentLoaded', () => {
             prevEl: '.swiper-button-prev',
         },
     });
-    // Fancybox.bind('[data-fancybox]', {
-    //     // Your custom options
+    Fancybox.bind('[data-fancybox]', {
+        // Your custom options
+    });
+    // $(document).ready(function () {
+    //     $('[data-fancybox]').fancybox();
     // });
-    const catalogSwiper = new Swiper('.catalog__swiper', {
+    const catalogSwiper1 = new Swiper('.catalog__swiper-1', {
         direction: 'horizontal',
         slidesPerView: 3,
         slidesPerGroup: 1,
@@ -46,28 +49,61 @@ window.addEventListener('DOMContentLoaded', () => {
         },
         on: {
             slideChange: function () {
-                updateZoom();
+                updateZoom(1);
             },
             transitionEnd: function () {
-                updateZoom();
+                updateZoom(1);
             },
         },
     });
-    function updateZoom() {
+    const catalogSwiper2 = new Swiper('.catalog__swiper-2', {
+        direction: 'horizontal',
+        slidesPerView: 3,
+        slidesPerGroup: 1,
+        spaceBetween: 160,
+        centeredSlides: true,
+        loop: true,
+        initialSlide: 1,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+            1600: {
+                slidesPerView: 3,
+            },
+            960: {
+                slidesPerView: 2,
+            },
+            319: {
+                slidesPerView: 1,
+            },
+        },
+        on: {
+            slideChange: function () {
+                updateZoom(2);
+            },
+            transitionEnd: function () {
+                updateZoom(2);
+            },
+        },
+    });
+    function updateZoom(number) {
         // Удаляем зум со всех слайдов
-        $('.swiper-slide .slide__imgs span .main-img').parent().trigger('zoom.destroy');
-        $('.swiper-slide .slide__imgs .imgs__wrap div .minor-img').parent().trigger('zoom.destroy');
-        $('.swiper-slide .slide__imgs .imgs__wrap span img').parent().trigger('zoom.destroy');
-
-        // Включаем зум на активном слайде
-        $('.swiper-slide-active .slide__imgs span .main-img').css('display', 'block').parent().zoom();
-        $('.swiper-slide-active .slide__imgs .imgs__wrap div .minor-img').css('display', 'block').parent().zoom();
-        $('.swiper-slide-active .slide__imgs .imgs__wrap span img').css('display', 'block').parent().zoom();
-        let test = document.querySelector('.catalog__swiper').querySelector('.swiper-slide-active').querySelectorAll('[data-fancybox]');
-        Fancybox.fromNodes(Array.from(test), {
-            // Your custom options
-        });
+        // $('.swiper-slide .slide__imgs span .main-img').parent().trigger('zoom.destroy');
+        // $('.swiper-slide .slide__imgs .imgs__wrap div .minor-img').parent().trigger('zoom.destroy');
+        // $('.swiper-slide .slide__imgs .imgs__wrap span img').parent().trigger('zoom.destroy');
+        // // Включаем зум на активном слайде
+        // $('.swiper-slide-active .slide__imgs span .main-img').css('display', 'block').parent().zoom();
+        // $('.swiper-slide-active .slide__imgs .imgs__wrap div .minor-img').css('display', 'block').parent().zoom();
+        // $('.swiper-slide-active .slide__imgs .imgs__wrap span img').css('display', 'block').parent().zoom();
+        // Добавляем атрибут data-fancybox активному слайду
+        $(`.catalog__swiper-${number} .swiper-slide img`).removeAttr('data-fancybox');
+        $(`.catalog__swiper-${number} .swiper-slide-active img`).attr('data-fancybox', '');
     }
+    Fancybox.bind('[data-fancybox]', {
+        // Ваши настройки Fancybox
+    });
 
     const buildingSwiper = new Swiper('.building__swiper', {
         direction: 'horizontal',
@@ -258,13 +294,13 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     })(document, window, 'tmr-code');
 });
-$(function () {
-    $(document).ready(function () {
-        let catalogTab = document.querySelectorAll('.catalog__tab');
-        catalogTab[1].addEventListener('click', () => {
-            $('.swiper-slide-active .slide__imgs span .main-img').css('display', 'block').parent().zoom();
-            $('.swiper-slide-active .slide__imgs .imgs__wrap div .minor-img').css('display', 'block').parent().zoom();
-            $('.swiper-slide-active .slide__imgs .imgs__wrap span img').css('display', 'block').parent().zoom();
-        });
-    });
-});
+// $(function () {
+//     $(document).ready(function () {
+//         let catalogTab = document.querySelectorAll('.catalog__tab');
+//         catalogTab[1].addEventListener('click', () => {
+//             $('.swiper-slide-active .slide__imgs span .main-img').css('display', 'block').parent().zoom();
+//             $('.swiper-slide-active .slide__imgs .imgs__wrap div .minor-img').css('display', 'block').parent().zoom();
+//             $('.swiper-slide-active .slide__imgs .imgs__wrap span img').css('display', 'block').parent().zoom();
+//         });
+//     });
+// });
