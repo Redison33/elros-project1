@@ -86,8 +86,8 @@
                 padding-bottom: 50px;
                 &-slide {
                     .slide__text {
-                        width: 40%;
-                        padding: 30px 15px 0 15px;
+                        // width: 40%;
+                        padding: 0 15px;
                         font-size: 14px;
                     }
                 }
@@ -227,6 +227,48 @@
             }
         }
     }
+    .buy {
+        &__container {
+            .buy__title {
+                font-size: 30px;
+            }
+            .buy__cards {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-column-gap: 32px;
+                .card {
+                    margin-bottom: 20px;
+                    &__title {
+                        font-size: 18px;
+                    }
+                }
+                // margin-bottom: 64px;
+                // @include card;
+            }
+        }
+    }
+    .design {
+        &__container {
+            .design__title {
+                font-size: 30px;
+            }
+            .swiper {
+                &-wrapper {
+                    .swiper-slide {
+                        height: 300px;
+                    }
+                }
+                &-button-prev {
+                    width: 30px;
+                    height: 30px;
+                }
+                &-button-next {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+        }
+    }
     .characteristics {
         &__container {
             .characteristics__title {
@@ -241,6 +283,7 @@
                     }
 
                     &__list {
+                        min-height: unset;
                         .list__item {
                             font-size: 16px;
                         }
@@ -262,7 +305,7 @@
                     font-size: 30px;
                 }
                 .homeForFamily__tabs {
-                    flex-wrap: wrap;
+                    width: 100%;
                     gap: 5px;
                     .homeForFamily__tab {
                         font-size: 14px;
@@ -271,7 +314,7 @@
                 }
             }
             .homeForFamily__plan {
-                top: 200px;
+                top: 230px;
                 padding: 20px;
                 img {
                     display: none;

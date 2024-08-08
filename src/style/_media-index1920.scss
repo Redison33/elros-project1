@@ -73,11 +73,12 @@
                 font-size: 60px;
             }
             .swiper {
+                margin: 0;
                 &-slide {
                     min-height: auto;
                     .slide__text {
                         width: 40%;
-                        padding: 50px 30px 0 30px;
+                        padding: 0 30px;
                         font-size: 24px;
                     }
                     .slide__img {
@@ -144,6 +145,44 @@
             }
         }
     }
+    .buy {
+        &__container {
+            margin-right: 50px;
+            margin-left: 50px;
+            .buy__title {
+                font-size: 60px;
+            }
+            .buy__cards {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-column-gap: 64px;
+                .card {
+                    &__title {
+                        font-size: 24px;
+                    }
+                }
+                // margin-bottom: 64px;
+                // @include card;
+            }
+        }
+    }
+    .design {
+        &__container {
+            margin-right: 50px;
+            margin-left: 50px;
+            .design__title {
+                margin-bottom: 60px;
+                font-size: 60px;
+            }
+            .swiper {
+                &-wrapper {
+                    .swiper-slide {
+                        height: 400px;
+                    }
+                }
+            }
+        }
+    }
     .characteristics {
         &__container {
             .characteristics__title {
@@ -157,6 +196,7 @@
                     }
 
                     &__list {
+                        min-height: 200px;
                         .list__item {
                             font-size: 24px;
                         }

@@ -1,4 +1,36 @@
 window.addEventListener('DOMContentLoaded', () => {
+    ////////////////////////////////////////////////////////////////
+    const scrollButton = document.querySelector('.button-overlay');
+    let timeout = null;
+
+    function handleScroll() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+
+        if (scrollTop >= (documentHeight - windowHeight) / 2) {
+            // scrollButton.style.display = 'block';
+            scrollButton.style.transform = 'rotate(90deg)';
+
+            // Сбрасываем таймер
+            clearTimeout(timeout);
+
+            // Устанавливаем таймер на скрытие кнопки
+            timeout = setTimeout(() => {
+                scrollButton.style.transform = 'rotate(90deg) translateY(200px)';
+            }, 2000);
+        } else {
+            scrollButton.style.transform = 'rotate(90deg) translateY(200px)';
+        }
+    }
+    window.addEventListener('scroll', handleScroll);
+    ////////////////////////////////////////////////////////////////
+
+    if (new Date().getHours() >= 5 && new Date().getHours() < 17) {
+        document.querySelector('.header').classList.add('header-day');
+    } else {
+        document.querySelector('.header').classList.add('header-night');
+    }
     IMask(document.getElementById('inputPhone'), {
         mask: '+{7}(000)000-00-00',
     });
@@ -21,16 +53,13 @@ window.addEventListener('DOMContentLoaded', () => {
     Fancybox.bind('[data-fancybox]', {
         // Your custom options
     });
-    // $(document).ready(function () {
-    //     $('[data-fancybox]').fancybox();
-    // });
     const catalogSwiper1 = new Swiper('.catalog__swiper-1', {
         direction: 'horizontal',
         slidesPerView: 3,
         slidesPerGroup: 1,
         spaceBetween: 160,
         centeredSlides: true,
-        loop: true,
+        // loop: true,
         initialSlide: 1,
         navigation: {
             nextEl: '.swiper-button-next',
@@ -62,7 +91,7 @@ window.addEventListener('DOMContentLoaded', () => {
         slidesPerGroup: 1,
         spaceBetween: 160,
         centeredSlides: true,
-        loop: true,
+        // loop: true,
         initialSlide: 1,
         navigation: {
             nextEl: '.swiper-button-next',
@@ -89,21 +118,10 @@ window.addEventListener('DOMContentLoaded', () => {
         },
     });
     function updateZoom(number) {
-        // Удаляем зум со всех слайдов
-        // $('.swiper-slide .slide__imgs span .main-img').parent().trigger('zoom.destroy');
-        // $('.swiper-slide .slide__imgs .imgs__wrap div .minor-img').parent().trigger('zoom.destroy');
-        // $('.swiper-slide .slide__imgs .imgs__wrap span img').parent().trigger('zoom.destroy');
-        // // Включаем зум на активном слайде
-        // $('.swiper-slide-active .slide__imgs span .main-img').css('display', 'block').parent().zoom();
-        // $('.swiper-slide-active .slide__imgs .imgs__wrap div .minor-img').css('display', 'block').parent().zoom();
-        // $('.swiper-slide-active .slide__imgs .imgs__wrap span img').css('display', 'block').parent().zoom();
-        // Добавляем атрибут data-fancybox активному слайду
         $(`.catalog__swiper-${number} .swiper-slide img`).removeAttr('data-fancybox');
         $(`.catalog__swiper-${number} .swiper-slide-active img`).attr('data-fancybox', '');
     }
-    Fancybox.bind('[data-fancybox]', {
-        // Ваши настройки Fancybox
-    });
+    Fancybox.bind('[data-fancybox]', {});
 
     const buildingSwiper = new Swiper('.building__swiper', {
         direction: 'horizontal',
@@ -127,34 +145,83 @@ window.addEventListener('DOMContentLoaded', () => {
             },
         },
     });
-    ymaps.ready(init);
-    function init() {
-        // Создание карты.
-        var myMap = new ymaps.Map(
-            'map',
-            {
-                center: [56.229065, 40.806625],
-                zoom: 9,
-                controls: [],
+    const designSwiper = new Swiper('.design__swiper', {
+        direction: 'horizontal',
+        slidesPerView: 3,
+        slidesPerGroup: 1,
+        spaceBetween: 40,
+        loop: true,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+            1600: {
+                slidesPerView: 3,
             },
-            { suppressMapOpenBlock: true },
-        );
+            800: {
+                slidesPerView: 2,
+            },
+            320: {
+                slidesPerView: 1,
+            },
+        },
+    });
+    // ymaps.ready(init);
+    // function init() {
+    //     // Создание карты.
+    //     var myMap = new ymaps.Map(
+    //         'map',
+    //         {
+    //             center: [56.229065, 40.806625],
+    //             zoom: 9,
+    //             controls: [],
+    //         },
+    //         { suppressMapOpenBlock: true },
+    //     );
 
-        let myPlacemark = new ymaps.Placemark([56.190702, 40.911506], {
-            balloonContent: 'Адрес: Владимирская область, Камешковский район, деревня Пенкино',
+    //     let myPlacemark = new ymaps.Placemark([56.190702, 40.911506], {
+    //         balloonContent: 'Адрес: Владимирская область, Камешковский район, деревня Пенкино',
+    //     });
+
+    //     myPlacemark.events.add('click', function (e) {
+    //         var placemark = e.get('target');
+    //         myMap.balloon.open(placemark.geometry.getCoordinates(), {
+    //             contentHeader: 'Информация',
+    //             contentBody: placemark.properties.get('balloonContent'),
+    //         });
+    //     });
+
+    //     myMap.geoObjects.add(myPlacemark);
+    // }
+
+    ymaps.ready(function () {
+        var myMap = new ymaps.Map('map', {
+            center: [55.753994, 37.622093],
+            zoom: 9,
+            // Добавим кнопку для построения маршрутов на карту.
+            controls: ['routeButtonControl'],
         });
 
-        myPlacemark.events.add('click', function (e) {
-            var placemark = e.get('target');
-            myMap.balloon.open(placemark.geometry.getCoordinates(), {
-                contentHeader: 'Информация',
-                contentBody: placemark.properties.get('balloonContent'),
+        var control = myMap.controls.get('routeButtonControl');
+
+        // Зададим координаты пункта отправления с помощью геолокации.
+        control.routePanel.geolocate('from');
+
+        // Откроем панель для построения маршрутов.
+        control.state.set('expanded', true);
+
+        // Подпишемся на событие успешного запроса маршрута.
+        control.routePanel.getRouteAsync().then(function (route) {
+            route.model.events.add('requestsuccess', function () {
+                // Установим координаты точки "Куда" (например, Золотые Ворота во Владимире).
+                control.routePanel.state.set({
+                    toEnabled: true,
+                    to: 'Владимирская область, Камешковский район, деревня Пенкино',
+                });
             });
         });
-
-        myMap.geoObjects.add(myPlacemark);
-    }
-
+    });
     let burger = document.querySelector('.burger');
     let burgerMenu = document.querySelector('.header__nav');
 
@@ -174,44 +241,35 @@ window.addEventListener('DOMContentLoaded', () => {
             event.preventDefault();
             errorText1.classList.add('error-text--active');
             errorText2.classList.add('error-text--active');
-            setTimeout(() => {
-                errorText1.classList.remove('error-text--active');
-            }, 5000);
-            setTimeout(() => {
-                errorText2.classList.remove('error-text--active');
-            }, 5000);
         } else if (inputPhone.value === '' || inputPhone.value.length !== 16) {
             event.preventDefault();
             errorText2.classList.add('error-text--active');
-            setTimeout(() => {
-                errorText2.classList.remove('error-text--active');
-            }, 5000);
         } else if (inputName.value === '') {
             event.preventDefault();
             errorText1.classList.add('error-text--active');
-            setTimeout(() => {
-                errorText1.classList.remove('error-text--active');
-            }, 5000);
         } else {
             errorText1.classList.remove('error-text--active');
             errorText2.classList.remove('error-text--active');
         }
     });
-
-    let tabs = document.querySelector('.catalog__tabs');
-    let tab = document.querySelectorAll('.catalog__tab');
-    let tabContent = document.querySelectorAll('.catalog__swiper');
-
-    tabs.addEventListener('click', (event) => {
-        for (let i = 0; i < tab.length; i++) {
-            tab[i].classList.remove('catalog__tab--active');
-            tabContent[i].classList.remove('swiper--active');
-            if (event.target == tab[i]) {
-                tabContent[i].classList.add('swiper--active');
-            }
-        }
-        event.target.classList.add('catalog__tab--active');
+    inputName.addEventListener('input', () => {
+        errorText1.classList.remove('error-text--active');
     });
+    inputPhone.addEventListener('input', () => {
+        errorText2.classList.remove('error-text--active');
+    });
+    for (let i = 0; i < document.querySelectorAll('.catalog__tab').length; i++) {
+        let tab = document.querySelectorAll('.catalog__tab')[i];
+        let tabContent = document.querySelectorAll('.catalog__swiper')[i];
+        tab.addEventListener('click', (event) => {
+            for (let i = 0; i < document.querySelectorAll('.catalog__tab').length; i++) {
+                document.querySelectorAll('.catalog__tab')[i].classList.remove('catalog__tab--active');
+                document.querySelectorAll('.catalog__swiper')[i].classList.remove('swiper--active');
+            }
+            tab.classList.add('catalog__tab--active');
+            tabContent.classList.add('swiper--active');
+        });
+    }
     let btnScroll1 = document.querySelector('.about__button');
     let btnScroll2 = document.querySelector('.characteristics__button');
     btnScroll1.addEventListener('click', () => {
@@ -253,7 +311,39 @@ window.addEventListener('DOMContentLoaded', () => {
     btnNav8.addEventListener('click', () => {
         document.querySelector('.homeForFamily').scrollIntoView({ behavior: 'smooth' });
     });
-
+    for (const button of document.querySelectorAll('.header__button')) {
+        button.addEventListener('click', () => {
+            document.querySelector('.feedback').scrollIntoView({ behavior: 'smooth' });
+        });
+    }
+    document.querySelector('.move-to-feedback').addEventListener('click', () => {
+        document.querySelector('.feedback').scrollIntoView({ behavior: 'smooth' });
+    });
+    for (const button of document.querySelectorAll('.slide__button')) {
+        button.addEventListener('click', () => {
+            document.querySelector('.feedback').scrollIntoView({ behavior: 'smooth' });
+        });
+    }
+    for (const tab of document.querySelectorAll('.homeForFamily__tab')) {
+        tab.classList.remove('homeForFamily__tab-active');
+        tab.addEventListener('click', () => {
+            tab.classList.add('homeForFamily__tab-active');
+        });
+    }
+    for (let i = 0; i < document.querySelectorAll('.homeForFamily__tab').length; i++) {
+        let tab = document.querySelectorAll('.homeForFamily__tab')[i];
+        const size = ['66-5', '82-55', '86-2', '101-63', '104-5', '119-83', '121', '121-5', '122-53', '146-6'];
+        // tab.classList.remove('homeForFamily__tab-active');
+        // document.querySelector('.homeForFamily__map').classList.remove(`homeForFamily__map-${i}`);
+        tab.addEventListener('click', () => {
+            for (let i = 0; i < document.querySelectorAll('.homeForFamily__tab').length; i++) {
+                document.querySelectorAll('.homeForFamily__tab')[i].classList.remove('homeForFamily__tab-active');
+                document.querySelector('.homeForFamily__map').classList.remove(`homeForFamily__map-${size[i]}`);
+            }
+            tab.classList.add('homeForFamily__tab-active');
+            document.querySelector('.homeForFamily__map').classList.add(`homeForFamily__map-${size[i]}`);
+        });
+    }
     (function (m, e, t, r, i, k, a) {
         m[i] =
             m[i] ||
@@ -294,13 +384,3 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     })(document, window, 'tmr-code');
 });
-// $(function () {
-//     $(document).ready(function () {
-//         let catalogTab = document.querySelectorAll('.catalog__tab');
-//         catalogTab[1].addEventListener('click', () => {
-//             $('.swiper-slide-active .slide__imgs span .main-img').css('display', 'block').parent().zoom();
-//             $('.swiper-slide-active .slide__imgs .imgs__wrap div .minor-img').css('display', 'block').parent().zoom();
-//             $('.swiper-slide-active .slide__imgs .imgs__wrap span img').css('display', 'block').parent().zoom();
-//         });
-//     });
-// });
